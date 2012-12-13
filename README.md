@@ -10,12 +10,9 @@ programming in style.
 
 The app is part of my application to thoughtbot's apprenticeship program.
 
-To Do:
-<<<<<<< HEAD
+What is Implemented?
+====================
 UserModel with *[Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
-=======
-* [UserModel with Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
->>>>>>> 659513096927113d88d7c6d9ebdf84168be39e4c
-* CompanyModel, with pitches, descriptions and 
-* InvRequestsModel
+* CompanyModel, with pitch, description and SlideModel 
+* InviteModel
 
