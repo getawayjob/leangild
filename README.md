@@ -1,3 +1,10 @@
+What is Implemented?
+====================
+
+* UserModel with [Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
+* CompanyModel, with pitch, description and SlideModel 
+* InviteModel, with email
+
 You look great in Suspenders
 ============================
 
@@ -8,12 +15,4 @@ programming in style.
 * [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
 * [Style](http://github.com/thoughtbot/guides/blob/master/style)
 
-The app is part of my application to thoughtbot's apprenticeship program.
-
-What is Implemented?
-====================
-
-* UserModel with [Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
-* CompanyModel, with pitch, description and SlideModel 
-* InviteModel, with email
 
