@@ -11,8 +11,7 @@ programming in style.
 The app is part of my application to thoughtbot's apprenticeship program.
 
 To Do:
-* User profiles
-* Authentication w/ Device
-* Company Profiles
-* Invitation Requests and Managemente
+* UserModel with Authentication w/ Device [Based on Railscasts by @ryanb](http://www.railscasts.com/episodes/209-devise-revised)
+* CompanyModel, with pitches, descriptions and 
+* InvRequestsModel
 
