@@ -12,7 +12,8 @@ The app is part of my application to thoughtbot's apprenticeship program.
 
 What is Implemented?
 ====================
-UserModel with *[Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
+
+* UserModel with [Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
 * CompanyModel, with pitch, description and SlideModel 
-* InviteModel
+* InviteModel, with email
 
