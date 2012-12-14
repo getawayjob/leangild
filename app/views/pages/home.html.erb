@@ -1,1 +1,20 @@
-This is the homepage!
+<% provide(:title, 'Gauge Interest. Attract Potential Customers and Members.') %>
+<% if user_signed_in? %>
+	<div class="span3">
+		<%= render 'application/side_bar' %>
+	</div>
+	<div class="span9">
+		This is the homepage.
+	</div>
+<% else %>
+<div class="hero-unit">
+<h1>Welcome to leangild!</h1> </br>
+							  </br>
+	<h2>The lean startup gild.</h2>
+<strong>Gauge interest in your products. Attract potential customers and users.</strong> </br>
+</br>
+</br>
+	<%= button_to "Sign Up", signup_path, :class => "btn btn-large btn-primary btn-block" %> 
+	<%= button_to "Sign In", signup_path, :class => "btn btn-large btn-success btn-block" %>
+</div>
+<% end %>

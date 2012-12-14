@@ -2,7 +2,7 @@ What is Implemented?
 ====================
 
 * UserModel with [Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
-* CompanyModel, with pitch, description and SlideModel 
+* CompanyModel, with pitch, description and SlideModel
 * InviteModel, with email
 
 You look great in Suspenders

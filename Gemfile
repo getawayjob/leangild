@@ -27,6 +27,7 @@ end
 gem 'jquery-rails'
 gem 'thin'
 gem 'high_voltage'
+gem 'devise'
 
 group :development do
   gem 'foreman'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'rspec-rails'
   gem 'sham_rack'
+  gem 'annotate'
 end
 
 group :test do
