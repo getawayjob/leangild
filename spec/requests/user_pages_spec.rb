@@ -37,7 +37,7 @@ describe "UserPages" do
       fill_in "Password", with: user.password
       click_button submit
     end
-  it { should have_selector('title', text: user.username) }
+  it { page.should have_selector('title', text:'Leangild | All Startups') }
   end
  end
 end

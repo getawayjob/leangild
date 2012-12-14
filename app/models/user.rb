@@ -35,4 +35,6 @@ class User < ActiveRecord::Base
   VALID_USERNAME_REGREX = /^[A-Za-z0-9_]+$/ 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_USERNAME_REGREX },
             length: { minimum: 2, maximum: 25 }
+  
+  has_many :startups, dependent: :destroy
 end

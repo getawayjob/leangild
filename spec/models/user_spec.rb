@@ -54,4 +54,6 @@ describe User do
   NAMES.each do |name|
     it { should ensure_length_of(name).is_at_most(25).with_message(:too_long) }
   end
+  
+  it { should have_many(:startups) }
 end

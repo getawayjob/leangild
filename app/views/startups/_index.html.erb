@@ -1,0 +1,19 @@
+<%- model_class = Startup -%>
+<table class="table table-striped">
+  <thead>
+<%= link_to "Create Startup", new_startup_path, :class => 'btn btn-success' %>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:pitch) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @startups.each do |startup| %>
+      <tr>
+		<td><%= link_to startup.name, startup_path(startup) %></td>
+        <td><%= startup.pitch %></td>
+       </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
