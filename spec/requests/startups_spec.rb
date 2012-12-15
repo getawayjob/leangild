@@ -36,6 +36,7 @@ describe "Startups" do
       sign_in(user)
       visit startup_path(startup)
     end
+    
     it "should allow destroy" do
       expect { click_link "Destroy" }.to change(Startup, :count).by(-1)
     end
