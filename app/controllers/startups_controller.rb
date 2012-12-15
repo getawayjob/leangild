@@ -1,7 +1,4 @@
 class StartupsController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :correct_owner, only: [:edit, :destroy, :update]
-  
   # GET /startups
   # GET /startups.json
   def index
@@ -82,12 +79,5 @@ class StartupsController < ApplicationController
       format.html { redirect_to startups_url }
       #format.json { head :no_content }
     end
-  end
-  
-  private
-  
-  def correct_owner
-    @startup = current_user.startups.find_by_id(params[:id])
-    redirect_to :back if @startup.nil?
   end
 end
