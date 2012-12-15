@@ -11,4 +11,12 @@ FactoryGirl.define do
     password "password"
     password_confirmation "password"
    end
+   
+   factory :startup do
+     name "Startup"
+     pitch "Pitch"
+     website "website.com"
+     description "description"
+     user
+   end
  end   
