@@ -14,6 +14,7 @@
 
 class Startup < ActiveRecord::Base
   attr_accessible :description, :name, :pitch, :website
+  attr_accessible :description, :name, :pitch, :website, :user_id, as: :admin
   
   belongs_to :user
     

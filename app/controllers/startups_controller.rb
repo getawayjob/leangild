@@ -43,7 +43,7 @@ class StartupsController < ApplicationController
   # POST /startups
   # POST /startups.json
   def create
-    @startup = current_user.startups.build(params[:startup])
+    @startup = current_user.startups.build(params[:startup], as: :admin)
     
     respond_to do |format|
       if @startup.save
@@ -62,7 +62,7 @@ class StartupsController < ApplicationController
     @startup = Startup.find(params[:id])
 
     respond_to do |format|
-      if @startup.update_attributes(params[:startup])
+      if @startup.update_attributes(params[:startup], as: :admin)
         format.html { redirect_to @startup, notice: 'Startup was successfully updated.' }
         #format.json { head :no_content }
       else
@@ -75,7 +75,7 @@ class StartupsController < ApplicationController
   # DELETE /startups/1
   # DELETE /startups/1.json
   def destroy
-    @startup = Startup.find(params[:id])
+    @startup = Startup.find(params[:id], as: :admin)
     @startup.destroy
 
     respond_to do |format|

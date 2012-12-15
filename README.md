@@ -1,9 +1,10 @@
 What is Implemented?
 ====================
 
-* UserModel with [Authentication w/ Device](http://www.railscasts.com/episodes/209-devise-revised)
-* CompanyModel, with pitch, description and SlideModel
-* InviteModel, with email
+* UserModel with [Authentication w/ Devise](http://www.railscasts.com/episodes/209-devise-revised)
+* StartupModel, with pitch, description, website, and name.
+* InviteModel, with email.
+* [ActiveAdmin](http://railscasts.com/episodes/284-active-admin), for Startup and Invite management.
 
 You look great in Suspenders
 ============================
