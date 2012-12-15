@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
          
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :username
+  before_save :write_down_fullname
   
   validates :first_name, :last_name, presence: true, length: { maximum: 25 }
   
@@ -37,4 +38,10 @@ class User < ActiveRecord::Base
             length: { minimum: 2, maximum: 25 }
   
   has_many :startups, dependent: :destroy
+  
+  private
+  
+  def write_down_fullname
+    self.fullname = [first_name.capitalize, last_name.capitalize].join(' ')
+  end
 end
