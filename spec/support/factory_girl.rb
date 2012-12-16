@@ -19,4 +19,4 @@ FactoryGirl.define do
      description "description"
      user
    end
- end   
+  end   

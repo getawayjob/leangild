@@ -18,6 +18,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  fullname               :string(255)
 #
 
 require 'spec_helper'
@@ -30,7 +31,7 @@ describe User do
   subject { @user }
   
   #responds_to, allow_mass_assignment attr
-  USER_ATTRS = [:first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me]
+  USER_ATTRS = [:first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me, :relationships]
   USER_ATTRS.each do |attr|
     it { should respond_to(attr) }
     it { should allow_mass_assignment_of(attr) }
