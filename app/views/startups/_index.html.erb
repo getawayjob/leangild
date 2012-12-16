@@ -11,7 +11,7 @@
     <% @startups.each do |startup| %>
       <tr>
 		<td><%= link_to startup.name, startup_path(startup) %></td>
-        <td><%= startup.pitch %></td>
+        <td><%= truncate(startup.pitch, length: 260) %></td>
        </td>
       </tr>
     <% end %>

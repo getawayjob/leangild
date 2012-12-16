@@ -47,9 +47,7 @@ describe "Startups" do
      sign_in(wrong_user)
      visit startup_path(startup)
    end
-   it "should allow destroy" do
-     expect { click_link "Destroy" }.not_to change(Startup, :count)
-    end
+     it { page.should_not have_link("Destroy") }
    end
   end
   
@@ -69,16 +67,22 @@ describe "Startups" do
       expect { page.should have_selector('h3', text: 'Startup') }
     end
   end
+  
+    describe "with invalid information" do
+    it "should not allow update" do
+      expect { click_button "Update Startup" }.not_to change(Startup, :count)
+      expect { page.should have_selector('h3', text: 'Edit Startup') }
+    end
+  end
 end
-   
-  describe "with wrong_user" do
+ 
+describe "with wrong_user" do
        before do
          sign_in(wrong_user)
          visit startup_path(startup)
-         click_link "Edit"
        end
 
-     it { page.should_not have_selector('h3', text: 'Edit Startup') }
+     it { page.should_not have_link('Edit') }
      it { page.should have_selector('h3', text: 'Startup') }
     end
   end
