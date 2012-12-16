@@ -61,18 +61,22 @@ describe User do
   it { should have_many(:invitations) }
   it { should have_many(:requested_invitations).through(:invitations) }
   
+  it { should respond_to(:invitations) }
   it { should respond_to(:requested_invitations) }
+  
   it { should respond_to(:request_invite!) }
   
+  let(:startup) { FactoryGirl.create(:startup, user: @user) }
+  let(:requester) { FactoryGirl.create(:user, email: "requester@example.com", username: "requester") }
+  
   describe "request invite" do
-     let(:startup) { FactoryGirl.create(:startup, user: @user) }
-     let(:invitee) { FactoryGirl.create(:user, email: "invitee@example.com", username: "invitee") }
-     before do
-       invitee.save
-       startup.save
-       invitee.request_invite!(startup)
-     end
-
-     it  { should be_valid }
+    before do
+      requester.request_invite!(startup)
+    end
+    
+    it { should be_valid }
+    
+    it { requester.should be_requested(startup) }
+    it { startup.should be_requested(requester) }
   end
 end

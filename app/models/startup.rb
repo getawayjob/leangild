@@ -23,5 +23,9 @@ class Startup < ActiveRecord::Base
   belongs_to :user
   
   has_many :invitations, dependent: :destroy
-  has_many :invitation_requests, through: :invitations
+  has_many :invitation_requests, through: :invitations, source: :user
+  
+  def requested?(user)
+    invitations.find_by_user_id(user.id)
+  end
 end

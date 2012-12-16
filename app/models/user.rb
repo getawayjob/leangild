@@ -41,10 +41,14 @@ class User < ActiveRecord::Base
   has_many :startups, dependent: :destroy
   
   has_many :invitations, dependent: :destroy
-  has_many :requested_invitations, through: :invitations
+  has_many :requested_invitations, through: :invitations, source: :startup
   
   def request_invite!(startup)
-     invitations.build(startup_id: startup.id)
+    invitations.create!(startup_id: startup.id)
+  end
+  
+  def requested?(startup)
+    invitations.find_by_startup_id(startup.id)
   end
   
   private

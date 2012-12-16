@@ -37,6 +37,4 @@ describe Startup do
   
   it { should have_many(:invitations).dependent(:destroy) }
   it { should have_many(:invitation_requests).through(:invitations) }
-  
-  it { should respond_to(:invitation_requests) }
 end
