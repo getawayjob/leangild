@@ -40,6 +40,13 @@ class User < ActiveRecord::Base
   
   has_many :startups, dependent: :destroy
   
+  has_many :invitations, dependent: :destroy
+  has_many :requested_invitations, through: :invitations
+  
+  def request_invite!(startup)
+     invitations.build(startup_id: startup.id)
+  end
+  
   private
   
   def write_down_fullname

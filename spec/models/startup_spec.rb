@@ -34,4 +34,9 @@ describe Startup do
   it { should respond_to(:website) }
   it { should ensure_length_of(:pitch).is_at_most(500) }
   it { should ensure_length_of(:description).is_at_most(3000) }
+  
+  it { should have_many(:invitations).dependent(:destroy) }
+  it { should have_many(:invitation_requests).through(:invitations) }
+  
+  it { should respond_to(:invitation_requests) }
 end

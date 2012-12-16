@@ -72,11 +72,11 @@ describe "Startups" do
     it "should not allow update" do
       expect { click_button "Update Startup" }.not_to change(Startup, :count)
       expect { page.should have_selector('h3', text: 'Edit Startup') }
-    end
-  end
-end
+     end
+   end
+ end
  
-describe "with wrong_user" do
+  describe "with wrong_user" do
        before do
          sign_in(wrong_user)
          visit startup_path(startup)

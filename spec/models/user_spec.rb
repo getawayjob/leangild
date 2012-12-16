@@ -31,7 +31,7 @@ describe User do
   subject { @user }
   
   #responds_to, allow_mass_assignment attr
-  USER_ATTRS = [:first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me, :relationships]
+  USER_ATTRS = [:first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me]
   USER_ATTRS.each do |attr|
     it { should respond_to(attr) }
     it { should allow_mass_assignment_of(attr) }
@@ -56,5 +56,23 @@ describe User do
     it { should ensure_length_of(name).is_at_most(25).with_message(:too_long) }
   end
   
-  it { should have_many(:startups) }
+  it { should have_many(:startups).dependent(:destroy) }
+  
+  it { should have_many(:invitations) }
+  it { should have_many(:requested_invitations).through(:invitations) }
+  
+  it { should respond_to(:requested_invitations) }
+  it { should respond_to(:request_invite!) }
+  
+  describe "request invite" do
+     let(:startup) { FactoryGirl.create(:startup, user: @user) }
+     let(:invitee) { FactoryGirl.create(:user, email: "invitee@example.com", username: "invitee") }
+     before do
+       invitee.save
+       startup.save
+       invitee.request_invite!(startup)
+     end
+
+     it  { should be_valid }
+  end
 end

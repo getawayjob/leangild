@@ -21,4 +21,7 @@ class Startup < ActiveRecord::Base
   validates :description, length: { maximum: 3000 }
     
   belongs_to :user
+  
+  has_many :invitations, dependent: :destroy
+  has_many :invitation_requests, through: :invitations
 end
