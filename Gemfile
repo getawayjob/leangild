@@ -28,7 +28,6 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'high_voltage'
 gem 'devise'
-gem 'activeadmin'
 
 group :development do
   gem 'foreman'
