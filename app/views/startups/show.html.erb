@@ -1,13 +1,16 @@
+<% provide(:title, "#{ @startup.name }")%>
 <%- model_class = Startup -%>
 <div class="span3">
  <%= render 'application/sidebar' %>
 </div>
 <div class="well span9">
 <div class="page-header">
+  <div class="pull-right"><%= render "invitation_form" %></div>
   <h3><%= @startup.name %></h3>
+  <strong><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></strong>
 </div>
 <dl class="dl-inline">
-  <dt><strong>Founder</strong></dt>
+   <dt><strong>Founder</strong></dt>
   <dd><%= @startup.user.fullname %></dd>
   <dt><strong><%= model_class.human_attribute_name(:website) %></strong></dt>
   <dd><%= @startup.website %></dd>

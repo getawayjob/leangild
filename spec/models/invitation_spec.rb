@@ -9,9 +9,6 @@ describe Invitation do
   
   it { should be_valid }
   
-  it { should respond_to(:user_id) }
-  it { should respond_to(:startup_id) }
-  
   it { should belong_to(:user) }
   it { should belong_to(:startup) }
   

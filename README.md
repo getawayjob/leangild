@@ -3,8 +3,7 @@ What is Implemented?
 
 * UserModel with [Authentication w/ Devise](http://www.railscasts.com/episodes/209-devise-revised)
 * StartupModel, with pitch, description, website, and name.
-* InviteModel, with email.
-* [ActiveAdmin](http://railscasts.com/episodes/284-active-admin), for Startup and Invite management.
+* Invitation model
 
 You look great in Suspenders
 ============================

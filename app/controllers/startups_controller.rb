@@ -43,7 +43,7 @@ class StartupsController < ApplicationController
   # POST /startups
   # POST /startups.json
   def create
-    @startup = current_user.startups.build(params[:startup], as: :admin)
+    @startup = current_user.startups.build(params[:startup])
     
     respond_to do |format|
       if @startup.save
@@ -62,7 +62,7 @@ class StartupsController < ApplicationController
     @startup = Startup.find(params[:id])
 
     respond_to do |format|
-      if @startup.update_attributes(params[:startup], as: :admin)
+      if @startup.update_attributes(params[:startup])
         format.html { redirect_to @startup, notice: 'Startup was successfully updated.' }
         #format.json { head :no_content }
       else

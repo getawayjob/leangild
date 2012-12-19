@@ -73,10 +73,13 @@ describe User do
     before do
       requester.request_invite!(startup)
     end
-    
+   
     it { should be_valid }
     
     it { requester.should be_requested(startup) }
     it { startup.should be_requested(requester) }
+
+    it { requester.requested_invitations.should include(startup) }
+    it { startup.invitation_requests.should include(requester) }
   end
 end

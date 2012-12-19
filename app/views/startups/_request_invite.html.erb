@@ -1,0 +1,4 @@
+<%= simple_form_for(current_user.invitations.build(startup_id: @startup.id)) do |f| %>
+<div><%= f.hidden_field :startup_id %></div>
+	<%= f.submit "Request Invite", class: "btn btn-success" %>
+<% end %>

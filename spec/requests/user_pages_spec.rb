@@ -19,12 +19,12 @@ describe "UserPages" do
       end
     end
      
-  describe "improper signup process" do
+describe "improper signup process" do
     it "should not create a user" do
       expect { click_button submit }.not_to change(User, :count)
     end
   end
- end
+end
  
  describe "Sign in" do
    let(:user) { FactoryGirl.create(:user) }
