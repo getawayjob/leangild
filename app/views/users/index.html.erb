@@ -1,0 +1,30 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:fullname) %></th>
+      <th><%= model_class.human_attribute_name(:username) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:current_sign_in_at) %></th>
+      <th><%= model_class.human_attribute_name(:last_sign_in_at) %></th>
+      <th><%= model_class.human_attribute_name(:admin) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+      	<td><%= user.fullname %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.current_sign_in_at %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.admin %></td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

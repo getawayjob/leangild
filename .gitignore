@@ -23,3 +23,6 @@ public/system
 rerun.txt
 tags
 vendor/bundler_gems
+
+# Ignore application configuration
+/config/application.yml

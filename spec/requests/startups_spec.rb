@@ -45,7 +45,7 @@ describe "Startups" do
    describe "with wrong user" do
    before do
      sign_in(wrong_user)
-     visit startup_path(startup)
+     visit startups_path(startup)
    end
      it { page.should_not have_link("Destroy") }
    end
@@ -54,6 +54,7 @@ describe "Startups" do
   describe "editing and updating a startup" do
     describe "with correct user" do
       before do
+      	startup.save
         sign_in(user)
         visit startup_path(startup)
         click_link "Edit"

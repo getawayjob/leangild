@@ -28,6 +28,9 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'high_voltage'
 gem 'devise'
+gem 'cancan'
+gem 'rolify'
+gem 'figaro'
 
 group :development do
   gem 'foreman'
@@ -39,6 +42,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sham_rack'
   gem 'annotate'
+  gem 'ffaker'
 end
 
 group :test do
@@ -53,6 +57,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'rb-fsevent'
   gem 'growl'
+  gem 'email_spec'
 end
 
 group :staging, :production do

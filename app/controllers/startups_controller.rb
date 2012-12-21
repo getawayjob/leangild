@@ -1,7 +1,7 @@
 class StartupsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :correct_owner, only: [:edit, :destroy, :update]
-  
+  load_and_authorize_resource :only => [:index, :edit, :destroy, :update]
+
   # GET /startups
   # GET /startups.json
   def index

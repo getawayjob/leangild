@@ -29,12 +29,25 @@ describe User do
   end
   
   subject { @user }
+
+  it { should be_valid }
+
+  it { should respond_to(:admin) }
+  it { should_not be_admin }
   
   #responds_to, allow_mass_assignment attr
   USER_ATTRS = [:first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me]
   USER_ATTRS.each do |attr|
     it { should respond_to(attr) }
     it { should allow_mass_assignment_of(attr) }
+  end
+
+  describe "with admin attr set to true" do
+	before do
+		@user.save!
+		@user.toggle!(:admin)
+	end
+	it { should be_admin }
   end
   
   #validate presence
