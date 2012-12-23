@@ -18,12 +18,12 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-  gem 'simple_form'
   gem 'less-rails'
   gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'simple_form'
 gem 'jquery-rails'
 gem 'thin'
 gem 'high_voltage'
