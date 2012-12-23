@@ -5,6 +5,7 @@ describe "Pages" do
 
 	describe "homepage" do
 		before do
+		 user.toggle!(:admin)
 		 sign_in(user)
 		 visit root_path
 		end

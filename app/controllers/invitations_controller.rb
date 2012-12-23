@@ -21,6 +21,9 @@ class InvitationsController < ApplicationController
 	 	invitations.each do |invitation|
 	 	invitation.send_invitation
 	 end
-		redirect_to :back, :only_path => true, :notice => "Successfully sent invitations to #{ total } users."
+	   redirect_to :back, :only_path => true, :notice => "No new invitation requests."	
     end
+
+
+    
   end

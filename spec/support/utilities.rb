@@ -5,3 +5,7 @@ def sign_in(user)
   fill_in "Password", with: user.password
   click_button "Sign In"
 end
+
+def sign_out(user)
+ click_link destroy_user_session_path, method: :delete
+end
