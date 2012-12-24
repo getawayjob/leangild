@@ -31,6 +31,7 @@ gem 'devise'
 gem 'cancan'
 gem 'rolify'
 gem 'figaro'
+gem 'public_activity'
 
 group :development do
   gem 'foreman'
@@ -40,7 +41,7 @@ end
 group :development, :test do
   gem 'guard'
   gem 'guard-spork'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.12.0'
   gem 'sham_rack'
   gem 'annotate'
   gem 'ffaker'
@@ -64,7 +65,6 @@ end
 group :staging, :production do
   gem 'newrelic_rpm'
 end
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
