@@ -13,11 +13,10 @@
 #
 
 class Startup < ActiveRecord::Base
-  attr_accessible :description, :name, :pitch, :website
+  attr_accessible :name, :pitch, :website
   
-  validates :description, :name, :pitch, :user_id, presence: true
+  validates :name, :pitch, :user_id, presence: true
   validates :pitch, length: { maximum: 500 }
-  validates :description, length: { maximum: 3000 }
 
   validates_uniqueness_of :name, case_sensitive: false
     

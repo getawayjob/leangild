@@ -2,7 +2,6 @@
   <%= f.input :name, :required => true, :autofocus => true %>
   <%= f.input :website, :required => false, :label => "Registered domain" %>
   <%= f.input :pitch, :required => true, :as => 'text', :input_html => { rows: 6, :class => 'span' } %>
-  <%= f.input :description, :required => true, :as => 'text', :input_html => { rows: 12, :class => 'span'} %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-success' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

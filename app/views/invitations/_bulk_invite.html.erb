@@ -2,7 +2,7 @@
 <%= simple_form_for(@startup.invitations, url: bulk_invite_path) do |f| %>
 <div><%= f.hidden_field :startup_id %></div></br>
 	<strong>Send Invitations</strong></br>
-	<%= f.select :quantity, :users => ['1', '5','10', '50', '100'] %></br>
+	<%= f.select :quantity, :users => ['10', '50', '100'] %></br>
 	<%= f.submit "Send Invitations", class: "btn btn-success" %>
 <% end %>
 <% end %>
