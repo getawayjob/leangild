@@ -15,15 +15,16 @@ class InvitationsController < ApplicationController
  	end
 
  	def bulk_invite
-    @startup = Startup.find(params[:invitation][:startup_id])
- 	 	invitations = @startup.invitations.where(:invite_token => nil).order(:created_at).limit(params[:quantity])
- 	 	total = invitations.count
-	 	invitations.each do |invitation|
-	 	invitation.send_invitation
+ 		@startup = Startup.find(params[:invitation][:startup_id])
+ 		invitations = @startup.invitations.where(:invite_token => nil).order(:created_at).limit(params[:quantity])
+ 		total = invitations.count
+ 		if invitations.any?
+ 			invitations.each do |invitation|
+      invitation.send_invitation
 	 end
-	   redirect_to :back, :only_path => true, :notice => "No new invitation requests."	
-    end
-
-
-    
+	 redirect_to :back, :only_path => true, :notice => "#{total} new invitation(s) sent to users."
+   else
+   redirect_to :back, :only_path => true, :notice => "No new invitations sent."
   end
+ end
+end

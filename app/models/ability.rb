@@ -5,7 +5,10 @@
     # Define abilities for the passed in user here. For example:
     
       user ||= User.new # guest user (not logged in)
-      if user
+      if user.has_role? :admin
+      	can :manage, :all
+      	can :read, :all
+      else
        	can :show, Startup
       	can :update, Startup do |startup|
         	startup.try(:user) == user
@@ -15,9 +18,7 @@
         end
         can :bulk_invite, Invitation do |invite|
 		    invite.try(:user) == Startup.user 
-       	end
-      elsif user.has_role? :admin
-      	can :manage, :all
+       	end 
       end
     
     # The first argument to `can` is the action you are giving the user permission to do.

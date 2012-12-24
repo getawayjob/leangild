@@ -1,6 +1,6 @@
-<%= @invitation.user.firstname %>, 
-<%= @invitation.user.fullname %> sent you an invitation to evaluate <%= @invitation.startup.name %> and provide feedback.
-Visit <%= startup_path(@invitation.startup) %>
+<%= @invitation.user.first_name %>, 
+<%= @invitation.startup.user.fullname %> sent you an invitation to evaluate <%= @invitation.startup.name %>.
+Visit <%= startup_path(@invitation.startup) %> to learn more.
 
 <%= @invitation.startup.pitch %>
 

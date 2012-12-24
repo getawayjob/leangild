@@ -18,6 +18,8 @@ class Startup < ActiveRecord::Base
   validates :description, :name, :pitch, :user_id, presence: true
   validates :pitch, length: { maximum: 500 }
   validates :description, length: { maximum: 3000 }
+
+  validates_uniqueness_of :name, case_sensitive: false
     
   belongs_to :user
   

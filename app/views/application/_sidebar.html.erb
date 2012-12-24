@@ -1,8 +1,4 @@
     <b><ul class="nav nav-list">
       <li class="active"><%= link_to "Startups", root_path  %></li>
       <li><%= link_to "Activity", "#"  %></li>
-      <% if current_user.admin? %>
-      <li><%= link_to "Startups", startups_path %></li>
-      <li><%= link_to "Users", users_path %></li>
-      <% end %>
     </ul></b>
