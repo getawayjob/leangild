@@ -1,5 +1,5 @@
 class InvitationMailer < ActionMailer::Base
-  default from: "notice@leangild.com"
+  default from: "notice@leangild.herokuapp.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
