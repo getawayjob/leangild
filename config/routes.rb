@@ -11,6 +11,6 @@ Leangild::Application.routes.draw do
     match '/signup', :to => "devise/registrations#new"
     match '/signin', :to => "devise/sessions#new"
   end
-  
+
   root to: 'pages#home'
 end

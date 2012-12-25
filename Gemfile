@@ -8,7 +8,13 @@ gem 'rails', '3.2.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem 'simple_form'
+gem 'jquery-rails'
+gem 'thin'
+gem 'high_voltage'
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,16 +28,6 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'simple_form'
-gem 'jquery-rails'
-gem 'thin'
-gem 'high_voltage'
-gem 'devise'
-gem 'cancan'
-gem 'rolify'
-gem 'figaro'
-gem 'public_activity'
 
 group :development do
   gem 'foreman'

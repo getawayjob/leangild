@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #  website     :string(255)
 #
-
 class Startup < ActiveRecord::Base
   attr_accessible :name, :pitch, :website
   
@@ -24,8 +23,14 @@ class Startup < ActiveRecord::Base
   
   has_many :invitations, dependent: :destroy
   has_many :invitation_requests, through: :invitations, source: :user
-  
+
   def requested?(user)
     invitations.find_by_user_id(user.id)
   end
+
+  include PublicActivity::Model
+  tracked :owner => proc { |controller, model| controller.current_user },
+  		  :params => {
+  		  	:summary => proc { |controller, model| controller.truncate(model.pitch, length: 100) }
+  		  }
 end

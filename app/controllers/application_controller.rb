@@ -5,4 +5,7 @@ class ApplicationController < ActionController::Base
   	flash[:error] = "Access Denied!"
   	redirect_to :back
   end
+  
+  include PublicActivity::StoreController
+  include ActionView::Helpers::TextHelper
 end
