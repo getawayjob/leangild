@@ -1,8 +1,8 @@
 <%= @invitation.user.first_name %>,
 
-<%= @invitation.startup.user.fullname %> sent you an invitation to evaluate <%= link_to @invitation.startup.name, startup_path(@invitation.startup) %>.
+<%= @invitation.startup.user.fullname %> sent you an invitation to evaluate <%= link_to @invitation.startup.name, startup_url(@invitation.startup) %>.
 
-Visit <%= link_to @invitation.startup.name, startup_path(@invitation.startup) %> to learn more.
+Visit <%= link_to @invitation.startup.name, startup_url(@invitation.startup) %> to learn more.
 
 <%= @invitation.startup.tagline %>
 
