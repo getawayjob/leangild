@@ -2,9 +2,9 @@
 
 <%= @invitation.startup.user.fullname %> sent you an invitation to evaluate <%= @invitation.startup.name %>.
 
-Visit <%= startup_url(@invitation.startup) %> to learn more.
+<%= @invitation.startup.name %> tagline: <%= @invitation.startup.tagline %>
 
-<%= @invitation.startup.tagline %>
+Visit <%= startup_url(@invitation.startup) %> to learn more.
 
 ---
 The lean startup gild.
