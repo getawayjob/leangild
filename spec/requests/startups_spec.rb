@@ -22,6 +22,7 @@ describe "Startups" do
         fill_in "Name", with: "Startup"
         fill_in "Pitch", with: "Pitch"
         fill_in "Registered domain", with: "Website"
+        fill_in "Tagline", with: "tagline"
       end
       it "should create a startup" do
         expect { click_button submit }.to change(Startup, :count).by(1)

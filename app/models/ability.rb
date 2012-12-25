@@ -18,7 +18,7 @@
         end
         can :bulk_invite, Invitation do |invite|
 		    invite.try(:user) == Startup.user 
-       	end 
+       end 
       end
       
     # The first argument to `can` is the action you are giving the user permission to do.

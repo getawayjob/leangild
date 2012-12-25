@@ -15,6 +15,7 @@ gem 'high_voltage'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
+gem 'social-share-button'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,6 +1,7 @@
 <%= simple_form_for @startup, :html => { :class => 'form-inline' } do |f| %>
   <%= f.input :name, :required => true, :autofocus => true %>
   <%= f.input :website, :required => false, :label => "Registered domain" %>
+  <%= f.input :tagline, :required => true, :input_html => { :class => 'span' } %> 
   <%= f.input :pitch, :required => true, :as => 'text', :input_html => { rows: 6, :class => 'span' } %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-success' %>
