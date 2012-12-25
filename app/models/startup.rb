@@ -27,10 +27,4 @@ class Startup < ActiveRecord::Base
   def requested?(user)
     invitations.find_by_user_id(user.id)
   end
-
-  include PublicActivity::Model
-  tracked :owner => proc { |controller, model| controller.current_user },
-  		  :params => {
-  		  	:summary => proc { |controller, model| controller.truncate(model.pitch, length: 100) }
-  		  }
 end

@@ -20,7 +20,6 @@ FactoryGirl.define do
      name "Startup"
      pitch "Pitch"
      website "website.com"
-     description "description"
      user
    end
   end   
