@@ -11,7 +11,9 @@
   <h2><%= @startup.name %></h2>
   <div class="muted">
  	<%= @startup.tagline %></br>
-  	<%= link_to @startup.website, "#" %></br>
+ 	<% if @startup.website.present? %>
+  		<%= link_to nil, "http://#{@startup.website}" %></br>
+  	<% end %>
  <b><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></b></br>
 </div>
 </div>
