@@ -1,5 +1,5 @@
 
-<div class="navbar navbar-fixed">
+<div class="navbar navbar-fixed visible-desktop hidden-tablet hidden-phone">
   <div class="navbar-inner">
     <div class="container">
       <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -25,6 +25,33 @@
 				<%= render "admin_links" %>
 			    </ul>
 			 </li>
+			<% else %>
+          	<li><%= link_to "Sign Up", signup_path  %></li>
+          	<li><%= link_to "Sign In", signin_path  %></li>
+		<% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-fixed hidden-deskop visible-tablet visible-phone">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="<%= root_path %>">leangild</a>
+      <div class="container nav-collapse">
+        <ul class="nav pull-right">
+		<% if user_signed_in? %>
+			      <!-- links -->
+			<li><%= link_to "Home", root_path %></li>
+		   	<li><%= link_to "Account...", edit_user_registration_path %></li>
+			<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+			<%= render "admin_links" %>
 			<% else %>
           	<li><%= link_to "Sign Up", signup_path  %></li>
           	<li><%= link_to "Sign In", signin_path  %></li>
