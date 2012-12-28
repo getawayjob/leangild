@@ -7,7 +7,7 @@
 <div class="page-header">
   <div class="pull-right muted"><%= render "invitations/invitation_form" %>
   	Share Now
-   	<%= social_share_button_tag("#{@startup.name}, ""#{@startup.tagline}") %>
+   	<%= social_share_button_tag("#{@startup.name}, ""#{@startup.tagline}", :url => startup_url ) %>
   </div>
   <h2><%= @startup.name %></h2>
   <div class="muted">
