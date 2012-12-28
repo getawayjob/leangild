@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #  website     :string(255)
 #
-
 require 'spec_helper'
 
 describe Startup do

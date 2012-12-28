@@ -62,21 +62,21 @@ describe "Startups" do
         
     it { page.should have_selector('h3', text: 'Edit Startup') }
     
-    describe "with valid information" do
+   describe "with valid information" do
     it "should allow update" do
       expect { click_button "Update Startup" }.not_to change(Startup, :count)
-      expect { page.should have_selector('h3', text: 'Startup') }
+      expect { page.should have_selector('h2', text: 'Startup') }
     end
   end
   
     describe "with invalid information" do
     it "should not allow update" do
       expect { click_button "Update Startup" }.not_to change(Startup, :count)
-      expect { page.should have_selector('h3', text: 'Edit Startup') }
+      expect { page.should have_selector('h2', text: 'Edit Startup') }
      end
    end
  end
- 
+
   describe "with wrong_user" do
        before do
          sign_in(wrong_user)
@@ -84,7 +84,7 @@ describe "Startups" do
        end
 
      it { page.should_not have_link('Edit') }
-     it { page.should have_selector('h3', text: 'Startup') }
+     it { page.should have_selector('h2', text: 'Startup') }
     end
   end
 end

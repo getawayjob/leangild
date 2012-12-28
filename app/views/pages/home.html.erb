@@ -7,53 +7,24 @@
 		<%= render 'startups/index' %>
 	</div>
 <% else %>
-<% provide(:title, 'Customer Discovery & Development, Simplified!') %>
+<% provide(:title, 'Customer Discovery and Development, Simplified!') %>
 <div>
-  <h1>WELCOME TO LEANGILD, FOUNDERS/STARTUPS</h1>
+  <h1>WELCOME TO LEANGILD, ENTREPRENEURS!</h1>
 </div>
-   <div>
-   <div class="span4">
-     <h2>Reach</h2>
-		     <p>
-		     <b>Definition - </b>Make contact or communicate with (someone) by telephone or other means.
-		     Leangild is a platform for founders/startups to REACH potential customers/users.		
-		     </p>
+<div>
+<i><h2>Customer Discovery and Development, Simplified!</h2></i>
+</div>
+<div>
+	<b><i>CREATE PAGES</b></i> for your <i><b>STARTUPS</b></i> and <i><b>REACH</b></i> potential <b><i>CUSTOMERS/USERS</i></b>. <i><b>ENGAGE </b></i>with them to <i><b>UNDERSTAND</b></i> the <b><i>SIGNIFICANCE</b></i>, <b><i>EXPLANATIONS</b></i>, and <b><i>CAUSES</b></i> of their <b><i>PROBLEMS</i></b> and <i><b>INNOVATE</b></i> to solve them. <i><b>VALIDATE</b></i> your <i><b>IDEAS!</b></i>
+</div>
+ <div>
+  <div class="span6">
+  <center><h2>Sign Up</h2></center> 
+       <%= link_to "Sign Up", signup_path, :class => 'btn btn-large btn-block' %>
+  </div>
+  <div class="span6">
+   	<center><h2>Sign In</h2></center>
+  		<%= link_to "Sign In", signin_path, :class => 'btn btn-large btn-block btn-success' %>
      </div>
-    <div class="span4">
-    <h2>Engage</h2>
-		    <p>
-		   	<b>Definition - </b>Cause someone to become involved in (a conversation or discussion).
-			 Leangild provides an environment for founders/startups to ENGAGE with potential customers/users.
-		     </p>
-     </div>
-     <div class="span4">
-     <h2>Understand</h2>
-		     <p>
-			<b>Definition - </b>Be sympathetically or knowledgeably aware of the character or nature of (something). UNDERSTAND the significance, explanations and causes of the problems that your potential customers/users are facing and innovate to solve them.	
-		     </p>
-     </div>
-     </div>
-    <div>
-	<h1>AND EARLY ADOPTERS.</h1>
-	</div>
-	<div>
-  	<div class="span4">
-    <h2>Access</h2>
-	    <p>
-	    <b>Definition - </b>The right or opportunity to use or benefit from something.
-	    Gain early ACCESS to products and help guide the design and development of products.
-	     </p>
-     </div>
-     <div class="span4">
-     <h2>Feedback</h2>
-	     <p>
-	     <b>Definition - </b>Information about reactions to a product, a person's performance of a task, etc., used as a basis for improvement. Provide FEEDBACK and help startups improve their products.
-	     </p>
-     </div>
-      <div class="span4">
-       <h2>Sign Up or Sign In</h2>
-        <p><%= link_to "Sign Up", signup_path, :class => 'btn btn-large btn-block' %></p>
-        <p><%= link_to "Sign In", signin_path, :class => 'btn btn-large btn-block btn-success' %></p>
-        </div>
-      </div> 
-    <% end %>
+  </div> 
+<% end %>
