@@ -16,7 +16,7 @@ require 'spec_helper'
 describe Startup do
   let(:user) { FactoryGirl.create(:user) }
   before do
-    @startup = user.startups.build(name: 'leangild', pitch: 'pitch', website: 'leangild.com', tagline: "customer discovery and development simplified")
+    @startup = user.startups.build(name: 'leangild', pitch: 'pitch', website: 'leangild.com', tagline: "tagline")
   end
   
   subject { @startup }
@@ -31,7 +31,7 @@ describe Startup do
   end
   
   it { should respond_to(:website) }
-  it { should ensure_length_of(:pitch).is_at_most(500) }
+  it { should ensure_length_of(:pitch).is_at_most(1000) }
   it { should ensure_length_of(:tagline).is_at_most(100) }
   it { should validate_uniqueness_of(:name).case_insensitive }
   

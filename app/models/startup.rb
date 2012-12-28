@@ -15,7 +15,7 @@ class Startup < ActiveRecord::Base
   attr_accessible :name, :pitch, :website, :tagline
   
   validates :name, :pitch, :user_id, :tagline, presence: true
-  validates :pitch, length: { maximum: 500 }
+  validates :pitch, length: { maximum: 1000 }
   validates :tagline, length: { maximum: 100 }
 
   validates_uniqueness_of :name, case_sensitive: false
