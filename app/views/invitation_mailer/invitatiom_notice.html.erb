@@ -1,12 +1,12 @@
-<%= @invitation.user.first_name %>,
+<%= @invitation.user.username %>,
 
-<%= @invitation.startup.user.fullname %> sent you an invitation to evaluate <%= @invitation.startup.name %>.
+<%= @invitation.startup.user.username %> sent you an invitation to evaluate <%= @invitation.startup.name %>.
 
 <%= @invitation.startup.name %> tagline: <%= @invitation.startup.tagline %>
 
 Visit <%= startup_url(@invitation.startup) %> to learn more.
 
 ---
-The lean startup gild.
+Customer discovery and development for entrepreneurs; product discovery for early adopters.
 
 Please do not reply to this email address. It's for outgoing messages only.

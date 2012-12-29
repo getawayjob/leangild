@@ -20,8 +20,8 @@ class Invitation < ActiveRecord::Base
   validates :startup_id, :user_id, presence: true
 
    def send_invitation
-	self.invite_token = SecureRandom.urlsafe_base64
-	save!
-	InvitationMailer.invitation_notice(self).deliver
+	 self.invite_token = SecureRandom.urlsafe_base64
+	 save!
+	 InvitationMailer.invitation_notice(self).deliver
   end
 end
