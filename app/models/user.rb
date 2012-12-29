@@ -31,16 +31,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
-  				  :username
-  before_save :write_down_fullname
-
-  before_save do
-  	self.first_name.capitalize
-  	self.last_name.capitalize
-  end
-  
-  validates :first_name, :last_name, presence: true, length: { maximum: 25 }
+  attr_accessible :email, :password, :username, :remember_me
   
   VALID_USERNAME_REGREX = /^[A-Za-z0-9_]+$/ 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_USERNAME_REGREX },
@@ -61,11 +52,5 @@ class User < ActiveRecord::Base
 
   def cancel_request!(startup)
   	invitations.find_by_startup_id(startup.id).destroy
-  end
-    
-  private
-  
-  def write_down_fullname
-    self.fullname = [first_name.capitalize, last_name.capitalize].join(' ')
   end
 end

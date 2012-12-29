@@ -7,12 +7,9 @@ describe "UserPages" do
     
     describe "proper signup process" do
       before do
-        fill_in "First name", with: "Firstname"
-        fill_in "Last name", with: "Lastname"
         fill_in "Username", with: "Username"
         fill_in "Email", with: "email@example.com"
         fill_in "Password", with: "password"
-        fill_in "Password confirmation", with: "password"
       end 
     it "should create a user" do
       expect { click_button submit }.to change(User, :count).by(1)

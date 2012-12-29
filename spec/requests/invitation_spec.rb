@@ -37,14 +37,14 @@ it "should increment the startup's invitation count" do
 	 click_button "Request Invite"
    end
 
- describe "and sending an invitation" do
-   	before do
-   	  requester.toggle!(:admin)
-	  visit startup_path(startup)
-	  click_button "Send Invitations"
-   	end
-	it { startup.invitations.first.invite_token.should_not == nil }
-   end
+ #  describe "and sending an invitation" do
+ #   	before do
+ #   	  requester.toggle!(:admin)
+	#   visit startup_path(startup)
+	#   click_button "Send Invitations"
+ #   	end
+	# it { startup.invitations.first.invite_token.should_not == nil }
+ #   end
   end
 
   describe "canceling a request" do

@@ -18,7 +18,7 @@
       <tr>
         <td><%= link_to startup.id, startup_path(startup) %></td>
         <td><%= link_to startup.name, startup_path(startup) %></td>
-        <td><%= startup.user.fullname %></td>
+        <td><%= startup.user.username %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_startup_path(startup), :class => 'btn btn-mini' %>

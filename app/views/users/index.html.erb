@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:fullname) %></th>
       <th><%= model_class.human_attribute_name(:username) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:admin) %></th>
@@ -16,7 +15,6 @@
     <% @users.each do |user| %>
       <tr>
       	<td><%= link_to user.id, user_path(user) %></td>
-      	<td><%= user.fullname %></td>
         <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
