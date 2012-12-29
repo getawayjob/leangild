@@ -4,34 +4,35 @@
  <%= render 'sidebar' %>
 </div>
 <div class="span9">
-<div class="page-header">
-  <div class="pull-right muted"><%= render "invitations/invitation_form" %>
-  	Share Now
-   	<%= social_share_button_tag("#{@startup.name}, ""#{@startup.tagline}", :url => startup_url ) %>
-  </div>
-  <h2><%= @startup.name %></h2>
-  <div class="muted">
- 	<%= @startup.tagline %></br>
- 	<% if @startup.website.present? %>
-  		<%= link_to nil, "http://#{@startup.website}", target: "_blank" %></br>
-  	<% end %>
- <b><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></b></br>
-</div>
-</div>
-<p><%= @startup.pitch %></p>
-<p class="muted">By <%= link_to @startup.user.fullname, "#" %></p>
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              root_path, :class => 'btn'  %>
-<% if @startup.user == current_user || current_user.admin? %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_startup_path(@startup), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              startup_path(@startup),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
- <%= render "invitations/bulk_invite" %>
- <% end %>
-</div>
-</div>
+	 <div class="page-header">
+	 <div class="pull-right muted">
+		<%= render "invitations/invitation_form" %>
+		  Share Now
+		  <%= social_share_button_tag("#{@startup.name}, ""#{@startup.tagline}", :url => startup_url ) %>
+	  </div>
+	  <h2><%= @startup.name %></h2>
+	  <div class="muted">
+		 	<%= @startup.tagline %></br>
+	<% if @startup.website.present? %>
+		  <%= link_to nil, "http://#{@startup.website}", target: "_blank" %></br>
+		  <% end %>
+	<b><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></b></br>
+	</div>
+	</div>
+	<p><%= @startup.pitch %></p>
+	<p class="muted">By <%= link_to @startup.user.fullname, "#" %></p>
+	<div class="form-actions">
+	  	<%= link_to t('.back', :default => t("helpers.links.back")),
+	              root_path, :class => 'btn'  %>
+	      <% if @startup.user == current_user || current_user.admin? %>
+		  <%= link_to "Actions and Metrics", "#", :class => "btn" %>
+		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+		              edit_startup_path(@startup), :class => 'btn' %>
+		  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+		              startup_path(@startup),
+		              :method => 'delete',
+		              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+		              :class => 'btn btn-danger' %>
+	 <% end %>
+	 </div>
+	</div>
