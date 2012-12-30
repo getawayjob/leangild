@@ -35,7 +35,7 @@ end
       fill_in "Password", with: user.password
       click_button submit
     end
-  it { page.should have_selector('title', text:'Leangild | All Startups') }
+  it { page.should have_selector('title', text:'Leangild | Create or Discover Products') }
   end
  end
 end
