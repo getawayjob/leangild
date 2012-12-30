@@ -6,7 +6,11 @@
 <div class="span9">
 	 <div class="page-header">
 	 <div class="pull-right muted">
-		<%= render "invitations/invitation_form" %>
+	 	<% if signed_in? %>
+			<%= render "invitations/invitation_form" %>
+		<% else %>
+			<%= link_to "Request Invite", signin_path, :class => 'btn btn-success' %>
+	   <% end %>
 	  </div>
 	  <h2><%= @startup.name %></h2>
 	  <div class="muted">
@@ -26,6 +30,7 @@
 	      <div class="pull-right">
 	      <%= render "startup_share" %>
 	  	</div>
+	  	  <% if signed_in? %>
 	      <% if @startup.user == current_user || current_user.admin? %>
 		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
 		              edit_startup_path(@startup), :class => 'btn' %>
@@ -34,6 +39,7 @@
 		              :method => 'delete',
 		              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
 		              :class => 'btn btn-danger' %>
+	 <% end %>
 	 <% end %>
 	 </div>
 	</div>

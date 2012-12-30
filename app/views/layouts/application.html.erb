@@ -50,9 +50,9 @@
           </div>
         </div><!--/row--> </br>
       <footer>
-      <strong><p>&copy;leangild</p><strong>
-     <% unless signed_in? %>
-	 <%= render "application/social_share" %>
+     <strong><p>&copy;leangild</p><strong>
+     <% if current_page?(root_path) && !signed_in? %>
+	 	<%= render "application/social_share" %>
 	 <% end %>
      </footer>
     </div> <!-- /container -->
