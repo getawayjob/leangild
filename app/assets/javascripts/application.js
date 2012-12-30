@@ -15,3 +15,5 @@
 //= require twitter/bootstrap
 //= require jquery-ui
 //= require_tree .
+
+Socialite.load()
