@@ -1,5 +1,5 @@
 Leangild::Application.routes.draw do
-  match '/sharrre' => 'Rsocialize#sharrre'
+  
   
   resources :invitations, only: [:create, :destroy]
   match 'bulk_invite', :to => 'invitations#bulk_invite'
