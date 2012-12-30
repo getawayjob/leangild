@@ -10,6 +10,6 @@ describe "Pages" do
 		 visit root_path
 		end
 
-	it { page.should have_selector('title', text: 'All Startups') }
+	it { page.should have_selector('title', text: 'Create or Discover a Product') }
   end
 end

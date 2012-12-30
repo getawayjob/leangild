@@ -25,7 +25,6 @@
 	  	<%= link_to t('.back', :default => t("helpers.links.back")),
 	              root_path, :class => 'btn'  %>
 	      <% if @startup.user == current_user || current_user.admin? %>
-		  <%= link_to "Actions and Metrics", "#", :class => "btn" %>
 		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
 		              edit_startup_path(@startup), :class => 'btn' %>
 		  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

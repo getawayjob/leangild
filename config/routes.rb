@@ -8,9 +8,11 @@ Leangild::Application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show]
   devise_scope :user do
-    match '/signup', :to => "devise/registrations#new"
-    match '/signin', :to => "devise/sessions#new"
+    match '/signup', :to => 'devise/registrations#new'
+    match '/signin', :to => 'devise/sessions#new'
   end
 
-  root to: 'pages#home'
+  match '/activity', :to => 'pages#activity'	
+  match '/dashboard', :to => 'pages#dashboard'
+  root :to => 'pages#home'
 end

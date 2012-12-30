@@ -6,4 +6,12 @@ class PagesController < ApplicationController
       format.html
     end
   end
+
+  def dashboard
+
+  end
+
+  def activity
+  	
+  end
 end
