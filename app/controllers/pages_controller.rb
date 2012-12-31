@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+	before_filter :authenticate_user!, only: [:dashboard, :activity]
+	
   def home
     @startups = Startup.all
 

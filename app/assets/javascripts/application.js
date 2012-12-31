@@ -16,5 +16,4 @@
 //= require jquery-ui
 //= require_tree .
 
-
 Socialite.load().process('#socialite');
