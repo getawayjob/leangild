@@ -23,13 +23,10 @@
 	</div>
 	<p><%= @startup.pitch %></p>
 	<p class="muted">By <%= link_to @startup.user.username, "#" %></p>
-	
 	<div class="form-actions">
-	  	<%= link_to t('.back', :default => t("helpers.links.back")),
-	              root_path, :class => 'btn'  %>
-	      <div class="pull-right">
-	      <%= render "startup_share" %>
-	  	</div>
+		 <%= render "startup_share" %></br>
+	  	 <%= link_to t('.back', :default => t("helpers.links.back")),
+	              :back, :class => 'btn'  %>
 	  	  <% if signed_in? %>
 	      <% if @startup.user == current_user || current_user.admin? %>
 		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
