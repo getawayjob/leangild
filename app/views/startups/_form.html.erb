@@ -1,8 +1,8 @@
 <%= simple_form_for @startup, :html => { :class => 'form-inline' } do |f| %>
-  <%= f.input :name, :required => true, :autofocus => true %>
-  <%= f.input :website, :required => false, :label => "Registered domain" %>
-  <%= f.input :tagline, :required => true, :input_html => { :class => 'span' } %> 
-  <%= f.input :pitch, :required => true, :as => 'text', :input_html => { rows: 6, :class => 'span' } %>
+  <%= f.input :name, :required => true, :autofocus => true, :placeholder => "Startup name" %>
+  <%= f.input :website, :required => false, :label => "Registered domain", :placeholder => "startup.domain (optional)" %>
+  <%= f.input :tagline, :required => true, :input_html => { :class => 'span' }, :placeholder => "Your idea in 100 characters or less" %> 
+  <%= f.input :pitch, :required => true, :as => 'text', :input_html => { rows: 10, :class => 'span' }, :placeholder => "Brief summary of your idea" %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-success' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

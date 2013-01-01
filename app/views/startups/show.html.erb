@@ -23,7 +23,9 @@
 	</div>
 	<p><%= @startup.pitch %></p>
 	<p class="muted">By <%= link_to @startup.user.username, "#" %></p>
-	<div class="form-actions">
+	<div class="form-actions muted">
+		 Share Now
+		 
 		 <%= render "startup_share" %></br>
 	  	 <%= link_to t('.back', :default => t("helpers.links.back")),
 	              :back, :class => 'btn'  %>
