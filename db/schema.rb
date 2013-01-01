@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220213946) do
+ActiveRecord::Schema.define(:version => 20130101052216) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "user_id"
     t.integer  "startup_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "invite_token"
   end
 
   add_index "invitations", ["startup_id"], :name => "index_invitations_on_startup_id"

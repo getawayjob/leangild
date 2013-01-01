@@ -19,6 +19,7 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  fullname               :string(255)
+#  admin                  :boolean          default(FALSE)
 #
 
 require 'spec_helper'

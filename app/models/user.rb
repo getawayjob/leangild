@@ -19,6 +19,7 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  fullname               :string(255)
+#  admin                  :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -61,7 +62,7 @@ class User < ActiveRecord::Base
   def cancel_request!(startup)
   	invitations.find_by_startup_id(startup.id).destroy
   end
-  
+    
   private
   
   def write_down_fullname

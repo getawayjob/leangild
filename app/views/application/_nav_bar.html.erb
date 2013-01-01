@@ -11,10 +11,20 @@
       <div class="container nav-collapse">
         <ul class="nav pull-right">
 		<% if user_signed_in? %>
-			<li><%= link_to "#{ current_user.fullname }", '#' %></li>
-			<li><%= link_to "Account", edit_user_registration_path %></li>
-			<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-		<% else %>
+						<li class="dropdown">
+			    <a class="dropdown-toggle"
+			       data-toggle="dropdown">
+			<%= "#{ current_user.fullname }" %>
+			        <b class="caret"></b>
+			      </a>
+			    <ul class="dropdown-menu">
+			      <!-- links -->
+			    <li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Account...", edit_user_registration_path %></li>
+				<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+			    </ul>
+			 </li>
+			<% else %>
           	<li><%= link_to "Sign Up", signup_path  %></li>
           	<li><%= link_to "Sign In", signin_path  %></li>
 		<% end %>

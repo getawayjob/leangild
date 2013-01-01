@@ -83,11 +83,5 @@ class StartupsController < ApplicationController
       #format.json { head :no_content }
     end
   end
-  
-  private
-  
-  def correct_owner
-    @startup = current_user.startups.find_by_id(params[:id])
-    redirect_to :back if @startup.nil?
-  end
+
 end

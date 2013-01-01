@@ -9,12 +9,15 @@
         can :manage, :all
         can :read, :all
       else
-      	can :read, Startup
+      	can :show, Startup
       	can :update, Startup do |startup|
         	startup.try(:user) == user || user.has_role?(:admin)
         end
         can :destroy, Startup do |startup|
         	startup.try(:user) == user || user.has_role?(:admin)
+        end
+        can :bulk_invite, Invitation do |invite|
+		    invite.try(:user) == Startup.user || user.has_role?(:admin)
         end
       end
     

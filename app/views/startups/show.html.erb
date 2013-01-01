@@ -3,27 +3,24 @@
 <div class="span3">
  <%= render 'application/sidebar' %>
 </div>
-<div class="well span9">
+<div class="span9">
 <div class="page-header">
-  <div class="pull-right"><%= render "invitation_form" %></div>
+  <div class="pull-right"><%= render "invitations/invitation_form" %></div>
   <h3><%= @startup.name %></h3>
-  <strong><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></strong>
+  <strong><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></strong></br>
+  <%= @startup.user.fullname %></br>
+  <%= @startup.website %></br>
 </div>
 <dl class="dl-inline">
-   <dt><strong>Founder</strong></dt>
-  <dd><%= @startup.user.fullname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:website) %></strong></dt>
-  <dd><%= @startup.website %></dd>
   <dt><strong><%= model_class.human_attribute_name(:pitch) %></strong></dt>
   <dd><%= @startup.pitch %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %></strong></dt>
   <dd><%= @startup.description %></dd>
 </dl>
-<%=l @startup.created_at %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               root_path, :class => 'btn'  %>
-<% if @startup.user == current_user %>
+<% if @startup.user == current_user || current_user.admin? %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_startup_path(@startup), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -31,6 +28,7 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
-<% end %>
+ <%= render "invitations/bulk_invite" %>
+ <% end %>
 </div>
 </div>

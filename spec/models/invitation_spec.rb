@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: invitations
+#
+#  id           :integer          not null, primary key
+#  user_id      :integer
+#  startup_id   :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  invite_token :string(255)
+#
+
 require 'spec_helper'
 
 describe Invitation do
