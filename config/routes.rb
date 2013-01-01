@@ -1,7 +1,7 @@
 Leangild::Application.routes.draw do
 
   resources :invitations, only: [:create, :destroy]
-  match 'invitations/bulk_invite', :to => 'invitations#bulk_invite'
+  match 'bulk_invite', :to => 'invitations#bulk_invite'
 
   resources :startups
  

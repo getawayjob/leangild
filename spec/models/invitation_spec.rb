@@ -25,7 +25,10 @@ describe Invitation do
   it { should belong_to(:startup) }
   
   it { should_not allow_mass_assignment_of(:user_id) }
+  it { should_not allow_mass_assignment_of(:invite_token) }
   
   it { should validate_presence_of(:user_id) }
   it { should validate_presence_of(:startup_id) }
+
+  it { should respond_to(:send_invitation) }
 end
