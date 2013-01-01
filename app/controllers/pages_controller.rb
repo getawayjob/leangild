@@ -16,4 +16,8 @@ class PagesController < ApplicationController
   def activity
   	
   end
+
+  def hashgild
+  	
+  end
 end

@@ -48,9 +48,9 @@
           <div class="span12">
              <%= yield %>
           </div>
-        </div><!--/row--> </br>
+        </div><!--/row--></br>
       <footer>
-     <strong class="muted"><p>&copy; 2012 leangild by <%= link_to "HashGild", "#" %></p><strong>
+     <strong class="muted"><p>&copy; 2012 leangild by <%= link_to "HashGild.", hashgild_path %></p><strong>
      <% if current_page?(root_path) && !signed_in? %>
 	 	<%= render "application/social_share" %>
 	 <% end %>

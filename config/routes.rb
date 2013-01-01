@@ -14,6 +14,7 @@ Leangild::Application.routes.draw do
     match '/signin', :to => 'devise/sessions#new'
   end
 
+  match '/hashgild', :to => 'pages#hashgild'
   match '/activity', :to => 'pages#activity'	
   match '/dashboard', :to => 'pages#dashboard'
   root :to => 'pages#home'
