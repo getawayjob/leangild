@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-	before_filter :authenticate_user!, only: [:dashboard, :activity]
+	before_filter :authenticate_user!, except: [:hashgild, :home]
 	
   def home
     @startups = Startup.all
