@@ -35,6 +35,9 @@ describe User do
 
   it { should respond_to(:admin) }
   it { should_not be_admin }
+
+  it { should have_db_column(:provider) }
+  it { should have_db_column(:uid) }
   
   #responds_to, allow_mass_assignment attr
   USER_ATTRS = [:username, :email, :password, :remember_me]
@@ -62,30 +65,30 @@ describe User do
   it { should ensure_length_of(:username).is_at_most(25).with_message(:too_long) }
   
   
- #  it { should have_many(:startups).dependent(:destroy) }
+  it { should have_many(:startups).dependent(:destroy) }
   
- #  it { should have_many(:invitations) }
- #  it { should have_many(:requested_invitations).through(:invitations) }
+  it { should have_many(:invitations) }
+  it { should have_many(:requested_invitations).through(:invitations) }
   
- #  it { should respond_to(:invitations) }
- #  it { should respond_to(:requested_invitations) }
+  it { should respond_to(:invitations) }
+  it { should respond_to(:requested_invitations) }
   
- #  it { should respond_to(:request_invite!) }
+  it { should respond_to(:request_invite!) }
   
- #  let(:startup) { FactoryGirl.create(:startup, user: @user) }
- #  let(:requester) { FactoryGirl.create(:user, email: "requester@example.com", username: "requester") }
+  let(:startup) { FactoryGirl.create(:startup, user: @user) }
+  let(:requester) { FactoryGirl.create(:user, email: "requester@example.com", username: "requester") }
   
- #  describe "request invite" do
- #    before do
- #      requester.request_invite!(startup)
- #    end
+  describe "request invite" do
+    before do
+      requester.request_invite!(startup)
+    end
    
- #    it { should be_valid }
+    it { should be_valid }
     
- #    it { requester.should be_requested(startup) }
- #    it { startup.should be_requested(requester) }
+    it { requester.should be_requested(startup) }
+    it { startup.should be_requested(requester) }
 
- #    it { requester.requested_invitations.should include(startup) }
- #    it { startup.invitation_requests.should include(requester) }
- #  end
+    it { requester.requested_invitations.should include(startup) }
+    it { startup.invitation_requests.should include(requester) }
+  end
 end
