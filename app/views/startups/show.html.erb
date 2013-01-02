@@ -1,28 +1,15 @@
 <% provide(:title, "#{ @startup.name }")%>
 <%- model_class = Startup -%>
 <div class="span3">
-</br>
- <%= render 'sidebar' %>
+	</br>
+	 <%= render 'sidebar' %>
 </div>
 <div class="span9">
 	<div class="page-header">
-	<div class="pull-right muted">
-	 <% if signed_in? %>
-		 <%= render "invitations/invitation_form" %>
-	 <% end %>
-	  </div>
-	  <h2><%= @startup.name %></h2>
-	  <div class="muted">
-		 	<%= @startup.tagline %></br>
-	<% if @startup.website.present? %>
-		  <%= link_to nil, "http://#{@startup.website}", target: "_blank" %></br>
-		  <% end %>
-	<b><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></b></br>
+	  <%= render "startup_header" %>
 	</div>
-	</div>
-	<p><%= @startup.pitch %></p>
-	<p class="muted">By <%= link_to @startup.user.username, "#" %></p>
+	    <%= render "startup_contents" %>
 	<div class="form-actions muted">
-	 <%= render "startup_actions" %>
-	 </div>
-	</div>
+		 <%= render "startup_actions" %>
+</div>
+</div>

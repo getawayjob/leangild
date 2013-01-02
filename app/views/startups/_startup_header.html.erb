@@ -1,0 +1,13 @@
+<div class="pull-right muted">
+	 <% if signed_in? %>
+		 <%= render "invitations/invitation_form" %>
+	 <% end %>
+	  </div>
+	  <h2><%= @startup.name %></h2>
+	  <div class="muted">
+		 	<%= @startup.tagline %></br>
+	<% if @startup.website.present? %>
+		  <%= link_to nil, "http://#{@startup.website}", target: "_blank" %></br>
+		  <% end %>
+	<b><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></b>
+</div>
