@@ -1,9 +1,11 @@
 <% if user_signed_in? %>
 <% provide(:title, 'Create or Discover Products') %>
 	<div class="span3">
+	</br>
 		<%= render 'application/sidebar' %>
 	</div>
 	<div class="span9">
+	</br>
 		<%= render 'startups/index' %>
 	</div>
 <% else %>
