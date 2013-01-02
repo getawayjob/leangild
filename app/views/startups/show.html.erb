@@ -4,13 +4,11 @@
  <%= render 'sidebar' %>
 </div>
 <div class="span9">
-	 <div class="page-header">
-	 <div class="pull-right muted">
-	 	<% if signed_in? %>
-			<%= render "invitations/invitation_form" %>
-		<% else %>
-			<%= link_to "Request Invite", signin_path, :class => 'btn btn-success' %>
-	   <% end %>
+	<div class="page-header">
+	<div class="pull-right muted">
+	 <% if signed_in? %>
+		 <%= render "invitations/invitation_form" %>
+	 <% end %>
 	  </div>
 	  <h2><%= @startup.name %></h2>
 	  <div class="muted">
@@ -24,22 +22,6 @@
 	<p><%= @startup.pitch %></p>
 	<p class="muted">By <%= link_to @startup.user.username, "#" %></p>
 	<div class="form-actions muted">
-		 Share Now
-		 
-		 <%= render "startup_share" %></br>
-	  	 <%= link_to t('.back', :default => t("helpers.links.back")),
-	              :back, :class => 'btn'  %>
-	  	  <% if signed_in? %>
-	      <% if @startup.user == current_user || current_user.admin? %>
-		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-		              edit_startup_path(@startup), :class => 'btn' %>
-		  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-		              startup_path(@startup),
-		              :method => 'delete',
-		              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-		              :class => 'btn btn-danger' %>
-		 <%= link_to "HashGild, Help!", "#", :class => "btn btn-warning" %>
-	 <% end %>
-	 <% end %>
+	 <%= render "startup_actions" %>
 	 </div>
 	</div>
