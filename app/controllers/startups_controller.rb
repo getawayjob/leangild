@@ -1,6 +1,6 @@
 class StartupsController < ApplicationController
   before_filter :authenticate_user!, except: [:show]
-  load_and_authorize_resource except: [:show]
+  load_and_authorize_resource only: [:index, :create, :update, :edit, :new]
 
   # GET /startups
   # GET /startups.json

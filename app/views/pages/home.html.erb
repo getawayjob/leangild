@@ -36,7 +36,9 @@
   <div>
   <div class="span6">
       <p>
-      	<%= link_to "Sign Up", signup_path, :class => 'btn btn-large btn-block' %>
+      	<%= link_to "Sign Up", signup_path, :class => 'btn btn-large btn-block' %></br>
+      	<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => 'btn btn-large btn-info btn-block' %>
+
       </p>
   </div>
   <div class="span6">
