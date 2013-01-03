@@ -5,13 +5,19 @@ class InvitationsController < ApplicationController
  	def create
 	  	@startup = Startup.find(params[:invitation][:startup_id])
 	  	current_user.request_invite!(@startup)
-	  	redirect_to @startup
+	  	respond_to do |format|
+	  		format.html { redirect_to @startup }
+	  		format.js
+	  end
  	end
 
  	def destroy
 	  	@startup = Invitation.find(params[:id]).startup
 	  	current_user.cancel_request!(@startup)
-	  	redirect_to @startup
+	  	respond_to do |format|
+	  	format.html { redirect_to @startup }
+	  	format.js
+	  end
  	end
 
  	def bulk_invite

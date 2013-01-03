@@ -1,0 +1,3 @@
+$("#request_form").html("<%= escape_javascript(render('invitations/request_invite')) %>")
+$("#invitations").html("<%= pluralize(@startup.invitation_requests.count, 'Invitation Request') %>")
+

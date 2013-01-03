@@ -1,5 +1,6 @@
 <%= simple_form_for(current_user.invitations.find_by_startup_id(@startup), 
-html: { method: :delete} ) do |f| %>
+html: { method: :delete},
+remote: true ) do |f| %>
 <div><%= f.hidden_field :startup_id %></div>
-	<%= f.submit "Cancel Request", class: "btn btn-danger" %>
+	<b><%= f.submit "Cancel Request", class: "btn btn-danger" %></b>
 <% end %>
