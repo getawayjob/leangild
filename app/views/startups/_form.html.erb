@@ -1,4 +1,4 @@
-<%= simple_form_for @startup, :html => { :class => 'form-inline' } do |f| %>
+<%= simple_form_for @startup, :html => { :class => 'form-inline' }, :validate => true do |f| %>
   <%= f.input :name, :required => true, :autofocus => true, :placeholder => "Startup name" %>
   <%= f.input :website, :required => false, :label => "Registered domain", :placeholder => "startup.domain (optional)" %>
   <%= f.input :tagline, :required => true, :input_html => { :class => 'span' }, :placeholder => "Your idea in 100 characters or less" %> 

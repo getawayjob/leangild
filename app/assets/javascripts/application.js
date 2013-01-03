@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery-ui
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require_tree .
 
 Socialite.load().process('#socialite');
