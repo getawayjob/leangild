@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'omniauth-twitter'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'acts_as_paranoid', '~> 0.4.1'
 
 # Gems used only for assets and not required
 # in production environments by default.

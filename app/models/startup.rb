@@ -22,6 +22,8 @@ class Startup < ActiveRecord::Base
     
   belongs_to :user
   
+  acts_as_paranoid
+
   has_many :invitations, dependent: :destroy
   has_many :invitation_requests, through: :invitations, source: :user
 

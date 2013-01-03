@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102095350) do
+ActiveRecord::Schema.define(:version => 20130103194151) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130102095350) do
     t.datetime "updated_at", :null => false
     t.string   "website"
     t.string   "tagline"
+    t.string   "deleted_at"
   end
 
   create_table "users", :force => true do |t|

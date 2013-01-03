@@ -38,7 +38,7 @@ describe "Startups" do
     end
     
     it "should allow destroy" do
-      expect { click_link "Destroy" }.to change(Startup, :count).by(-1)
+      expect { click_link "Archive Startup" }.not_to change(Startup, :count)
     end
    end
    
@@ -47,7 +47,7 @@ describe "Startups" do
      sign_in(wrong_user)
      visit startups_path(startup)
    end
-     it { page.should_not have_link("Destroy") }
+     it { page.should_not have_link("Archive Startup") }
    end
   end
   
@@ -57,7 +57,7 @@ describe "Startups" do
       	startup.save
         sign_in(user)
         visit startup_path(startup)
-        click_link "Edit"
+        click_link "Edit Startup"
       end
         
     it { page.should have_selector('h3', text: 'Edit Startup') }
@@ -83,7 +83,7 @@ describe "Startups" do
          visit startup_path(startup)
        end
 
-     it { page.should_not have_link('Edit') }
+     it { page.should_not have_link('Edit Startup') }
      it { page.should have_selector('h2', text: 'Startup') }
     end
   end

@@ -22,6 +22,7 @@ describe Startup do
   subject { @startup }
   
   it { should belong_to(:user) }
+  it { should have_db_column(:deleted_at) }
   
   #responds_to and presence
   STARTUP_ATTR = [:name, :pitch, :tagline]
