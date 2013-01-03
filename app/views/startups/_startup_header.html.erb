@@ -1,9 +1,6 @@
 	<div class="pull-right">
 	 <% if signed_in? %>
 	<%= render "invitations/invitation_form" %>
-	<% if current_user == @startup.user %>
-		<a href="#myModal" role="button" class="btn btn-inverse btn-small" data-toggle="modal">New Update</a>
-	<% end %>
 	<% end %>
 	 </div>
 	  <h2><%= @startup.name %></h2>
@@ -13,7 +10,7 @@
 		  <%= link_to nil, "http://#{@startup.website}", target: "_blank" %></br>
 		  <% end %>
 	<b><%= pluralize(@startup.invitation_requests.count, 'Invitation Request')%></b>
-  </div>
+   </div>
 
 <!-- Modal -->
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -29,5 +26,3 @@
     <button class="btn btn-primary">Save changes</button>
   </div>
 </div>
-
-
