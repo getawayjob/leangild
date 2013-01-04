@@ -23,6 +23,6 @@ public/system
 rerun.txt
 tags
 vendor/bundler_gems
-bundler_stubs
+/bundler_stubs
 
 # Ignore application configuration
