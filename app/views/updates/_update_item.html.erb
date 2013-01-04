@@ -1,13 +1,14 @@
 <li id="<%= update_item.id %>">
   <span class="content"><%= update_item.content %></span>
   <div class="timestamp muted">
-   <%= time_tag(update_item.created_at) %>
+   <%= (update_item.created_at.strftime('%D')) %>
   </span>
   <% if signed_in? %>
   <% if current_user == @startup.user || current_user.admin? %>
   | <%= link_to "Delete", update_item, method: :delete,
 									   data: { confirm: "Are You Sure" },
-									   title: update_item.content %>
+									   title: update_item.content
+								 		%>
   <% end %>
   <% end %>
 </li>

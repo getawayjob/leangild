@@ -1,5 +1,1 @@
-<%= simple_form_for @update, :html => { :class => 'form-vertical' }, :validate => true do |f| %>
-  <b class="muted"><%= f.input :content, :placeholder => "We're planning to add file and image sharing...interested?", :as => 'text', :input_html => { rows: 3, :class => 'span' }, :label => 'Progress Update', required: false %></b>
-  <%= f.hidden_field :startup_id %>
- <%= f.button :submit, :class => 'btn btn-primary' %>
-<% end %>
+<%= render "updates/form" %>

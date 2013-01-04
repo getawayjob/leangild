@@ -1,24 +1,25 @@
 		
 	<div class="tabbable">
-		<ul class="nav nav-pills">
-			<li class="active"><a href="#tabs1-pane1" data-toggle="tab"><b>Pitch</b></a></li>
-			<li><a href="#tabs1-pane2" data-toggle="tab"><b>Updates</b></a></li>
+		<ul class="nav nav-pills" id="updateTabs">
+			<li class="active"><a href="#pitch" data-toggle="tab"><b>Updates</b></a></li>
+			<li><a href="#updates" data-toggle="tab"><b>Pitch</b></a></li>
 		</ul>
 			<div class="tab-content">
-			<div class="tab-pane active" id="tabs1-pane1">										
-				<p><%= @startup.pitch %></p>
-				<div class="muted">
-					By <%= link_to @startup.user.username, "#" %>
-				</div>
-				</div>
-			<div class="tab-pane" id="tabs1-pane2">
-			<div>
+			<div class="tab-pane active" id="pitch">										
 			<% if signed_in? %>
-			<% if current_user == @startup.user || current_user.admin? %>
+			  <% if current_user == @startup.user || current_user.admin? %>
 				<%= render "updates/startup_updates" %>
-			<% end %>
+			  <% end %>
 			<% end %>
   			<%= render 'updates/update' %>
+			</div>
+			<div class="tab-pane" id="updates">
+			<div>
+			<p><%= @startup.pitch %></p>
+			<div class="muted">
+				By <%= link_to @startup.user.username, "#" %>
+			</div>
 		  </div>
 		</div><!-- /.tab-content -->
 	</div><!-- /.tabbable -->
+

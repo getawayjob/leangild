@@ -39,7 +39,7 @@ describe "Startups" do
     end
     
     it "should allow destroy" do
-      expect { click_link "Archive Startup" }.not_to change(Startup, :count)
+      expect { click_link "Archive Startup" }.to change(Startup, :count).by(-1)
     end
    end
    

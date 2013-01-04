@@ -14,10 +14,10 @@
         	startup.try(:user) == user
         end
         can :destroy, Startup do |startup|
-        	startup.try(:user) == Startup.user
+        	startup.try(:user) == startup.user
         end
         can :bulk_invite, Invitation do |invite|
-		    invite.try(:user) == Startup.user
+		    invite.try(:user) == startup.user
        end
        can :create, Update do |update|
 			update.startup.user == user

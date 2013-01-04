@@ -10,10 +10,9 @@ class UpdatesController < ApplicationController
     respond_to do |format|
       if @update.save
         format.html { redirect_to :back, notice: 'Progress updated successfully.' }
-        format.js
        else
        	format.html { redirect_to :back }
-        flash[:error] = 'Could not create update'
+        flash[:error] = 'Could not post progress.'
       end
     end
   end
@@ -25,7 +24,7 @@ class UpdatesController < ApplicationController
     @update.destroy
 
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to :back, notice: 'Progress deleted successfully.' }
     end
   end
 end
