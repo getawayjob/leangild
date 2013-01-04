@@ -13,8 +13,10 @@
 				</div>
 			<div class="tab-pane" id="tabs1-pane2">
 			<div>
-			<% if signed_in? && current_user == @startup.user || current_user.admin? %>
+			<% if signed_in? %>
+			<% if current_user == @startup.user || current_user.admin? %>
 				<%= render "updates/startup_updates" %>
+			<% end %>
 			<% end %>
   			<%= render 'updates/update' %>
 		  </div>
