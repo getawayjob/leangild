@@ -21,4 +21,9 @@ FactoryGirl.define do
      tagline "tagline"
      user
    end
+
+   factory :update do
+   	 content "update"
+   	 startup
+   	end
   end   

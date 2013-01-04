@@ -17,8 +17,14 @@
         	startup.try(:user) == user
         end
         can :bulk_invite, Invitation do |invite|
-		    invite.try(:user) == Startup.user 
-       end 
+		    invite.try(:user) == Startup.user
+       end
+   #     can :create, Update do |update|
+			# update.try(:user) == Update.startup.user
+   #     end
+   #     can :destroy, Update do |update|
+			# update.try(:user) == Update.startup.user
+   #     end
       end
       
     # The first argument to `can` is the action you are giving the user permission to do.

@@ -17,6 +17,8 @@ class StartupsController < ApplicationController
   # GET /startups/1.json
   def show
     @startup = Startup.find(params[:id])
+    @update  = @startup.updates.build
+    @startup_updates = Update.where(startup_id: @startup.id)
 
     respond_to do |format|
       format.html # show.html.erb

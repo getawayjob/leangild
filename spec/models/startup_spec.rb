@@ -20,6 +20,8 @@ describe Startup do
   end
   
   subject { @startup }
+
+  it { should be_valid }
   
   it { should belong_to(:user) }
   it { should have_db_column(:deleted_at) }
@@ -38,4 +40,6 @@ describe Startup do
   
   it { should have_many(:invitations).dependent(:destroy) }
   it { should have_many(:invitation_requests).through(:invitations) }
+
+  it { should have_many(:updates).dependent(:destroy) }
 end

@@ -12,10 +12,11 @@
 				</div>
 				</div>
 			<div class="tab-pane" id="tabs1-pane2">
-			<p>
-			<center><h1>Updates Coming Soon</h1></center>
-			</p>
-		</div>
+			<div>
+			<% if signed_in? && current_user == @startup.user || current_user.admin? %>
+				<%= render "updates/startup_updates" %>
+			<% end %>
+  			<%= render 'updates/update' %>
+		  </div>
 		</div><!-- /.tab-content -->
-		</div><!-- /.tabbable -->
-		<%= render "update_modal" %>
+	</div><!-- /.tabbable -->

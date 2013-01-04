@@ -20,13 +20,20 @@ class Startup < ActiveRecord::Base
 
   validates_uniqueness_of :name, case_sensitive: false
     
+  #startup should be owned by user
   belongs_to :user
   
+  #soft delete
   acts_as_paranoid
 
+  #invitation associations
   has_many :invitations, dependent: :destroy
   has_many :invitation_requests, through: :invitations, source: :user
+	
+  #startup association
+  has_many :updates, dependent: :destroy
 
+  #has startup been requested by user
   def requested?(user)
     invitations.find_by_user_id(user.id)
   end

@@ -10,12 +10,13 @@ describe "Startups" do
     before(:each) do
     sign_in(user)  
     visit new_startup_path
-    end  
-    describe "with invalid information" do
-     it "should not create a startup" do
-       expect { click_button submit }.not_to change(Startup, :count)
-      end
-    end
+    end 
+
+	 describe "with invalid information" do
+	   it "should not create a startup" do
+	     expect { click_button submit }.not_to change(Startup, :count)
+	   end
+	 end
     
     describe "with valid information" do
       before do
@@ -69,7 +70,7 @@ describe "Startups" do
     end
   end
   
-    describe "with invalid information" do
+ describe "with invalid information" do
     it "should not allow update" do
       expect { click_button "Update Startup" }.not_to change(Startup, :count)
       expect { page.should have_selector('h2', text: 'Edit Startup') }
