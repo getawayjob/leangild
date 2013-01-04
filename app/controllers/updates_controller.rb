@@ -1,6 +1,5 @@
 class UpdatesController < ApplicationController
 	before_filter :authenticate_user!
-	load_and_authorize_resource
 	
   # POST /updates
   # POST /updates.json

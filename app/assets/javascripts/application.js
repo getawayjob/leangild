@@ -18,7 +18,8 @@
 //= require rails.validations.simple_form
 //= require_tree .
 
-Socialite.load().process('#socialite');
+Socialite.load();
+
 
 
 

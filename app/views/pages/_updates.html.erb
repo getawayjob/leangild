@@ -1,0 +1,5 @@
+<% if @startup_updates.any? %>
+  <ol class="updates">
+    <%= render partial: 'pages/update_item', collection: @startup_updates %>
+  </ol>
+<% end %>
