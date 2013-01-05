@@ -41,6 +41,11 @@ class User < ActiveRecord::Base
   
   has_many :invitations, dependent: :destroy
   has_many :requested_invitations, through: :invitations, source: :startup
+
+  include Gravtastic
+  gravtastic :size => 215,
+  			 :default => "identicon",
+  			 :filetype => :png
   
   def request_invite!(startup)
     invitations.create!(startup_id: startup.id)

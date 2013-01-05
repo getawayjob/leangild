@@ -16,6 +16,7 @@
 //= require jquery-ui
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require gravtastic
 //= require_tree .
 
 Socialite.load();

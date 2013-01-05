@@ -7,18 +7,19 @@ gem 'rails', '3.2.10'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'pg' #database
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'thin'
-gem 'devise'
-gem 'cancan'
+gem 'devise'  #authenticate
+gem 'cancan'  #authorization w/ rolify
 gem 'rolify'
 gem 'figaro'
-gem 'omniauth-twitter'
-gem 'client_side_validations'
+gem 'omniauth-twitter'  #auth w/ twitter
+gem 'client_side_validations' #clientside validation
 gem 'client_side_validations-simple_form'
-gem 'acts_as_paranoid', '~> 0.4.1'
+gem 'acts_as_paranoid', '~> 0.4.1'	#soft delete
+gem 'gravtastic'	#user_image
 
 # Gems used only for assets and not required
 # in production environments by default.
