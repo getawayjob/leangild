@@ -52,6 +52,9 @@ class Startup < ActiveRecord::Base
   #startup association
   has_many :updates, dependent: :destroy
 
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+
   #has startup been requested by user
   def requested?(user)
     invitations.find_by_user_id(user.id)

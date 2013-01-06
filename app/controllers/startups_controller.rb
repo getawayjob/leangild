@@ -21,7 +21,11 @@ class StartupsController < ApplicationController
     @startup_updates = Update.where(startup_id: @startup.id)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html {
+      	if request.path != startup_path(@startup)
+    		redirect_to @startup, status: :moved_permanently
+   		 end
+   	   }
       #format.json { render json: @startup }
     end
   end
