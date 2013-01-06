@@ -2,6 +2,8 @@
   <ol class="startups">
     <%= render partial: 'users/startup_item', collection: @users_startups %>
   </ol>
+<% else %>
+  <h3>No invitation requests or startups created yet.</h3>
 <% end %>
 
 

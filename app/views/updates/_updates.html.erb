@@ -2,4 +2,6 @@
   <ol class="updates">
     <%= render partial: 'updates/update_item', collection: @startup_updates %>
   </ol>
+  <% else %>
+  <h3>No updates yet.</h3>
 <% end %>
