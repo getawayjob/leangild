@@ -2,7 +2,7 @@
    <span class=""><%= link_to update_item.startup.name, startup_path(update_item.startup) %></span>
   <span class="content"><%= update_item.content %></span>
   <div class="timestamp muted">
-  Posted <%= time_ago_in_words(update_item.created_at) %> ago by <%= link_to update_item.startup.user.username, '#' %>
+  Posted <%= time_ago_in_words(update_item.created_at) %> ago by <%= link_to update_item.startup.user.username, user_path(update_item.startup.user) %>
   </span>
   <% if signed_in? %>
   <% if current_user == update_item.startup.user || current_user.admin? %>

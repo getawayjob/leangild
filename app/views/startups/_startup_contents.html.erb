@@ -17,7 +17,7 @@
 			<div>
 			<p><%= @startup.pitch %></p>
 			<div class="muted">
-				By <%= link_to @startup.user.username, "#" %>
+				By <%= link_to @startup.user.username, user_path(@startup.user) %>
 			</div>
 		  </div>
 		</div><!-- /.tab-content -->
