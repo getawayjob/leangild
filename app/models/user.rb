@@ -61,6 +61,10 @@ class User < ActiveRecord::Base
   			 :default => "identicon",
   			 :filetype => :png
 
+  def users_startups
+    Startup.includes(:user).where(:user_id => Invitation.where(:user_id => self.id).pluck(:user_id) << self.id).order("created_at DESC")
+  end
+
   def website_present
 	website.present?
   end

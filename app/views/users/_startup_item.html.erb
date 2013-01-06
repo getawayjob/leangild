@@ -1,0 +1,15 @@
+<li id="<%= startup_item.id %>">
+   <span class="muted"><%= link_to startup_item.name, startup_path(startup_item) %> | <%= pluralize(startup_item.invitation_requests.count, 'Invitation Request') %></span>
+  <span class="pitch"><%= truncate(startup_item.pitch, :length => 140) %></span>
+  <div class="timestamp muted">
+  <%= (startup_item.created_at.strftime('%D')) %> by <%= link_to startup_item.user.username, user_path(startup_item.user) %>
+  </span>
+  <% if signed_in? %>
+  <% if current_user == startup_item.user || current_user.admin? %>
+  | <%= link_to "Delete", startup_item, method: :delete,
+									   data: { confirm: "Are You Sure" },
+									   title: startup_item.name
+								 		%>
+  <% end %>
+  <% end %>
+</li>

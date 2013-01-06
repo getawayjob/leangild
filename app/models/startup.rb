@@ -37,7 +37,7 @@ class Startup < ActiveRecord::Base
 
   URL_REGREX = /^https?:\/\/([^\s:@]+:[^\s:@]*@)?[-[[:alnum:]]]+(\.[-[[:alnum:]]]+)+\.?(:\d{1,5})?([\/?]\S*)?$/iux
 
-  validates :website, format: { with: URL_REGREX, message: "is invalid, include htpp://" }, :if => :website_present
+  validates :website, format: { with: URL_REGREX, message: "is invalid, ensure htpp://  is included" }, :if => :website_present
     
   #startup should be owned by user
   belongs_to :user

@@ -22,7 +22,7 @@ describe "Startups" do
       before do
         fill_in "Name", with: "Startup"
         fill_in "Pitch", with: "Pitch"
-        fill_in "Registered domain", with: "Website"
+        fill_in "Registered Website", with: "http://website.com"
         fill_in "Tagline", with: "tagline"
       end
       it "should create a startup" do

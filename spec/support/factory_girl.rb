@@ -17,7 +17,7 @@ FactoryGirl.define do
    factory :startup do
      name "Startup"
      pitch "Pitch"
-     website "website.com"
+     website "http://website.com"
      tagline "tagline"
      user
    end

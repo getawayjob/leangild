@@ -2,7 +2,7 @@
   <%= f.input :name, :required => true, :autofocus => true, :placeholder => "Startup name" %>
   <%= f.input :website, :required => false, :label => "Registered Website", :placeholder => "http://website.com (optional)" %>
   <%= f.input :tagline, :required => true, :input_html => { :class => 'span' }, :placeholder => "Your idea in 4 or words." %> 
-  <%= f.input :pitch, :required => true, :as => 'text', :input_html => { rows: 10, :class => 'span' }, :placeholder => "Brief summary of your idea" %>
+  <%= f.input :pitch, :required => true, :as => 'text', :input_html => { rows: 10, :class => 'span' }, :placeholder => "Sell your startup idea to customers/users and partners and fellow entrepreneurs..." %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-success' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

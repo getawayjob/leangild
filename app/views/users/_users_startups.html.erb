@@ -1,0 +1,7 @@
+<% if @users_startups.any? %>
+  <ol class="startups">
+    <%= render partial: 'users/startup_item', collection: @users_startups %>
+  </ol>
+<% end %>
+
+

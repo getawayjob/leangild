@@ -31,7 +31,7 @@ require 'spec_helper'
 describe Startup do
   let(:user) { FactoryGirl.create(:user) }
   before do
-    @startup = user.startups.build(name: 'leangild', pitch: 'pitch', website: 'leangild.com', tagline: "tagline")
+    @startup = user.startups.build(name: 'leangild', pitch: 'pitch', website: 'http://leangild.com', tagline: "tagline")
   end
   
   subject { @startup }
