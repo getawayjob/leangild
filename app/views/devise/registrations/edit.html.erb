@@ -11,6 +11,7 @@
     <%= f.input :fullname, :required => false, :label => "Name" %>
     <%= f.input :public_email, :required => false %>
     <%= f.input :organization, :required => false %>
+    <%= f.input :location, :required => false, :placeholder => "New York, NY" %>
     <%= f.input :website, :required => false, :placeholder => "http://username.com" %>
     <%= f.input :bio, :required => false, :input_html => { :class => 'span9', rows: 4 }, :placeholder => "Say something about yourself" %>
     <% if f.object.encrypted_password.present? %>
