@@ -2,6 +2,21 @@
 #
 # Table name: startups
 #
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  pitch      :text
+#  name       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  website    :string(255)
+#  tagline    :string(255)
+#  deleted_at :string(255)
+#
+
+# == Schema Information
+#
+# Table name: startups
+#
 #  id          :integer          not null, primary key
 #  user_id     :integer
 #  pitch       :text
@@ -19,6 +34,10 @@ class Startup < ActiveRecord::Base
   validates :tagline, length: { maximum: 100 }
 
   validates_uniqueness_of :name, case_sensitive: false
+
+  URL_REGREX = /^https?:\/\/([^\s:@]+:[^\s:@]*@)?[-[[:alnum:]]]+(\.[-[[:alnum:]]]+)+\.?(:\d{1,5})?([\/?]\S*)?$/iux
+
+  validates :website, format: { with: URL_REGREX, message: "is invalid, include htpp://" }, :if => :website_present
     
   #startup should be owned by user
   belongs_to :user
@@ -36,5 +55,11 @@ class Startup < ActiveRecord::Base
   #has startup been requested by user
   def requested?(user)
     invitations.find_by_user_id(user.id)
+  end
+	
+  private 
+
+  def website_present
+  	website.present?    	
   end
 end

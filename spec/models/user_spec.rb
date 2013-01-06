@@ -3,9 +3,6 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  first_name             :string(255)
-#  last_name              :string(255)
-#  username               :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string(255)      default(""), not null
@@ -18,8 +15,15 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
-#  fullname               :string(255)
 #  admin                  :boolean          default(FALSE)
+#  username               :string(255)
+#  provider               :string(255)
+#  uid                    :string(255)
+#  fullname               :string(255)
+#  public_email           :string(255)
+#  organization           :string(255)
+#  website                :string(255)
+#  bio                    :text
 #
 
 require 'spec_helper'
@@ -75,7 +79,7 @@ describe User do
   
   it { should respond_to(:request_invite!) }
   
-  let(:startup) { FactoryGirl.create(:startup, user: @user) }
+  let(:startup) { FactoryGirl.create(:startup, user: @user, website: "http://leangild.com") }
   let(:requester) { FactoryGirl.create(:user, email: "requester@example.com", username: "requester") }
   
   describe "request invite" do
@@ -91,4 +95,11 @@ describe User do
     it { requester.requested_invitations.should include(startup) }
     it { startup.invitation_requests.should include(requester) }
   end
+
+  it { should have_db_column(:fullname) }
+  it { should have_db_column(:organization) }
+  it { should have_db_column(:website) }
+  it { should have_db_column(:bio) }
+  it { should have_db_column(:public_email) }
+  it { should have_db_column(:location) }
 end

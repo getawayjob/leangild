@@ -8,12 +8,13 @@ Leangild::Application.routes.draw do
   resources :startups
  
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+
+  devise_scope :user do
+    match '/signup', :to => 'devise/registrations#new', as: 'signup'
+    match '/signin', :to => 'devise/sessions#new', as: 'signin'
+  end
   
   resources :users, only: [:index, :show]
-  devise_scope :user do
-    match '/signup', :to => 'devise/registrations#new'
-    match '/signin', :to => 'devise/sessions#new'
-  end
 
   match '/hashgild', :to => 'pages#hashgild'
   match '/activity', :to => 'pages#activity'	

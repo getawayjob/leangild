@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130103205913) do
+ActiveRecord::Schema.define(:version => 20130105225818) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "user_id"
@@ -71,6 +71,12 @@ ActiveRecord::Schema.define(:version => 20130103205913) do
     t.string   "username"
     t.string   "provider"
     t.string   "uid"
+    t.string   "fullname"
+    t.string   "public_email"
+    t.string   "organization"
+    t.string   "website"
+    t.text     "bio"
+    t.string   "location"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

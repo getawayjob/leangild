@@ -3,9 +3,6 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  first_name             :string(255)
-#  last_name              :string(255)
-#  username               :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string(255)      default(""), not null
@@ -18,8 +15,15 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
-#  fullname               :string(255)
 #  admin                  :boolean          default(FALSE)
+#  username               :string(255)
+#  provider               :string(255)
+#  uid                    :string(255)
+#  fullname               :string(255)
+#  public_email           :string(255)
+#  organization           :string(255)
+#  website                :string(255)
+#  bio                    :text
 #
 
 class User < ActiveRecord::Base
@@ -31,21 +35,35 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :username, :remember_me
+  attr_accessible :email, :password, :username, :remember_me, :public_email, :organization, :website,
+  				  :bio, :fullname
   
   VALID_USERNAME_REGREX = /^[A-Za-z0-9_]+$/ 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_USERNAME_REGREX },
             length: { minimum: 2, maximum: 25 }
+
+  EMAIL_REGREX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+
+  validates :email, format: { with: EMAIL_REGREX, message: "is not an email" }
+
+
+  URL_REGREX = /^https?:\/\/([^\s:@]+:[^\s:@]*@)?[-[[:alnum:]]]+(\.[-[[:alnum:]]]+)+\.?(:\d{1,5})?([\/?]\S*)?$/iux
+
+  validates :website, length: { maximum: 250 }, format: { with: URL_REGREX, message: "is invalid, include htpp://" }, :if => :website_present
   
   has_many :startups, dependent: :destroy
   
   has_many :invitations, dependent: :destroy
   has_many :requested_invitations, through: :invitations, source: :startup
-
+  
   include Gravtastic
   gravtastic :size => 215,
   			 :default => "identicon",
   			 :filetype => :png
+
+  def website_present
+	website.present?
+  end
   
   def request_invite!(startup)
     invitations.create!(startup_id: startup.id)

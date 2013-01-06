@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: updates
+#
+#  id         :integer          not null, primary key
+#  startup_id :integer
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Update < ActiveRecord::Base
   attr_accessible :content, :startup_id
 

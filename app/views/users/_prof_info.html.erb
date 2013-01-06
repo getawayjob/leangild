@@ -1,0 +1,21 @@
+<span class="hidden-phone hidden-tablet visible-desktop">
+<%= image_tag(@user.gravatar_url) %></a></span></br>
+<% if @user.fullname.present? %>
+<b><div style="font-size: 26px; margin-bottom: 8px;">
+	<%= @user.fullname %></div></b>
+<% end %>
+<div style="font-size: 20px;" class="muted">
+	<%= @user.username %></div>
+<hr style="margin-bottom: 1px;">
+<% if @user.organization.present? %>
+	<%= @user.organization %></br>
+<% end %>
+<% if @user.location.present? %>
+	<%= @user.location %></br>
+<% end %>
+<% if @user.website.present? %>
+	<%= link_to nil, @user.website, target: '_blank' %></br>
+<% end %>
+<% if @user.public_email.present? %>
+	<%= @user.public_email %>
+<% end %>

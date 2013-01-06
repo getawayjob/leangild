@@ -7,8 +7,8 @@
 	  <div class="muted">
 		 	<%= @startup.tagline %></br>
 	<% if @startup.website.present? %>
-		  <%= link_to nil, "http://#{@startup.website}", target: "_blank" %></br>
-		  <% end %>
+		  <%= link_to nil, @startup.website , target: "_blank" %></br>
+	<% end %>
 	<b id="invitations"><%= pluralize(@startup.invitation_requests.count, 'Invitation Request') %></b>
    </div>
 

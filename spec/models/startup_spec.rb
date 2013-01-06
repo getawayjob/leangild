@@ -2,6 +2,21 @@
 #
 # Table name: startups
 #
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  pitch      :text
+#  name       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  website    :string(255)
+#  tagline    :string(255)
+#  deleted_at :string(255)
+#
+
+# == Schema Information
+#
+# Table name: startups
+#
 #  id          :integer          not null, primary key
 #  user_id     :integer
 #  pitch       :text

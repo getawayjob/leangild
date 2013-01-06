@@ -1,28 +1,24 @@
 <%- model_class = User -%>
-<div class="span3 hidden-phone hidden-tablet visible-desktop">
+<div class="span3">
  </br>
-<%= image_tag(@user.gravatar_url) %>
+	<%= render "users/prof_info" %>
 </div>	
 <div class="span9">
 	</br>
-	<div class="tabbable">
-		<ul class="nav nav-pills" id="updateTabs">
-			<li class="active"><a href="#pitch" data-toggle="tab"><b>Startups</b></a></li>
-			<li><a href="#updates" data-toggle="tab"><b>Public Activity</b></a></li>
+	<div class="tabbable" id="#profile">
+		<ul class="nav nav-pills" id="profTab">
+			<li class="active"><a href="#startups" data-toggle="pill"><b> Startups </b></a></li>
+			<li><a href="#merits" data-toggle="pill"><b> Reputation </b></a></li>
 			</ul>
 			<div class="tab-content">
-			<div class="tab-pane active" id="pitch">										
-			 <h1>These are his companies.</h1>
+			<div class="tab-pane active" id="startups">									
+			 <h1>Startup pages greated.</h1>
 			</div>
-			<div class="tab-pane" id="updates">
+			<div class="tab-pane" id="merits">
 			<div>
-			 <h1>Public Activities.</h1>
+			 <h1>Points, Badges, and Ranks</h1>
 			</div>
 		  </div>
 		</div><!-- /.tab-content -->
 	</div><!-- /.tabbable -->
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              :back, :class => 'btn'  %>
-</div>
 </div>
