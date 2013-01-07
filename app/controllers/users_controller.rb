@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-  	@users_startups = @user.users_startups
+  	@users_startups = @user.startups
+  	@requested_startups = @user.requested_startups
   end
 end

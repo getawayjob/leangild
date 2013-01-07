@@ -7,16 +7,20 @@
 	</br>
 	<div class="tabbable" id="#profile">
 		<ul class="nav nav-pills" id="profTab">
-			<li class="active"><a href="#startups" data-toggle="pill"><b> Startups </b></a></li>
+			<li class="active"><a href="#requests" data-toggle="pill"><b>Requests</b></a></li>
 			<li><a href="#merits" data-toggle="pill"><b> Reputation </b></a></li>
+			<li><a href="#startups" data-toggle="pill"><b>Startups</b></a></li>
 			</ul>
 			<div class="tab-content">
-			<div class="tab-pane active" id="startups">	
-			 <%= render "users/users_startups" %>
+			<div class="tab-pane active" id="requests">
+ 			 <%= render "users/requested_startups" %>
 			</div>
-			<div class="tab-pane" id="merits">
-			<div>
+			<div class="tab-pane" id="merits">	
 			 <h1>Points, Badges, and Ranks</h1>
+			</div>
+			<div class="tab-pane" id="startups">
+			<div>
+			 <%= render "users/users_startups" %>
 			</div>
 		  </div>
 		</div><!-- /.tab-content -->

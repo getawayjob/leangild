@@ -1,0 +1,7 @@
+<% if @requested_startups.any? %>
+  <ol class="startups">
+    <%= render partial: 'users/startup_item', collection: @requested_startups %>
+  </ol>
+<% else %>
+  <h3>No invitation requests yet.</h3>
+<% end %>

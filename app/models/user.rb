@@ -64,8 +64,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
 
-  def users_startups
-    Startup.includes(:user).where(:user_id => Invitation.where(:user_id => self.id).pluck(:user_id) << self.id).order("created_at DESC")
+  def requested_startups
+  	self.requested_invitations - self.startups
   end
 
   def website_present
