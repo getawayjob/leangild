@@ -1,5 +1,5 @@
 <% if @requested_startups.any? %>
-  <ol class="startups">
+  <ol class="listed_items">
     <%= render partial: 'users/startup_item', collection: @requested_startups %>
   </ol>
 <% else %>

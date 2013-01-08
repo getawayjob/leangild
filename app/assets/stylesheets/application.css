@@ -6,7 +6,7 @@
  *= require_tree .
 */
 
-.updates {
+.listed_items {
   list-style: none;
   margin: 10px 0 0 0;
 
@@ -19,15 +19,16 @@
   display: block;
 }
 
-.startups {
-  list-style: none;
-  margin: 10px 0 0 0;
-
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
+#prof_fullname {
+	font-size: 26px; 
+	margin-bottom: 8px;
 }
-.pitch {
-  display: block;
+
+#prof_username {
+	font-size: 20px;
+	margin-bottom: 8px;
+}
+
+#prof_hr {
+	margin: 1px;
 }

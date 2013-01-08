@@ -1,6 +1,6 @@
 <li id="<%= startup_item.id %>">
    <span class="muted"><%= link_to startup_item.name, startup_path(startup_item) %> | <%= pluralize(startup_item.invitation_requests.count, 'Invitation Request') %></span>
-  <span class="pitch"><%= truncate(startup_item.pitch, :length => 210) %></span>
+  <span class="content"><%= truncate(startup_item.pitch, :length => 210) %></span>
   <div class="timestamp muted">
   By <%= link_to startup_item.user.username, user_path(startup_item.user) %> on <%= (startup_item.created_at.strftime('%D')) %>
   </span>

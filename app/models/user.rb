@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
          
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :username, :remember_me, :public_email, :organization, :website,
-  				  :bio, :fullname
+  				  :bio, :fullname, :location
   
   VALID_USERNAME_REGREX = /^[A-Za-z0-9_]+$/ 
   validates :username, presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_USERNAME_REGREX },
