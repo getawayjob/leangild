@@ -1,4 +1,5 @@
 <%- model_class = Startup -%>
+<%= link_to "Create Startup Page", new_startup_path, :class => 'btn btn-success' %>
 <% if @startups.any? %>
   <ol class="listed_items">
     <%= render partial: 'pages/startup_item', collection: @startups %>
