@@ -1,6 +1,8 @@
 Leangild::Application.routes.draw do
 
-  resources :updates, only: [:index, :create, :destroy]
+  resources :updates, only: [:index, :create, :destroy] do
+	member { post :vote }
+  end
 
   resources :invitations, only: [:create, :destroy]
   match 'bulk_invite', :to => 'invitations#bulk_invite'

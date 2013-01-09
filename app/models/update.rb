@@ -18,4 +18,6 @@ class Update < ActiveRecord::Base
   validates :content, length: { maximum: 250 }
 
   default_scope order: 'updates.created_at DESC'
+
+  has_reputation :update_votes, source: :user, aggregated_by: :sum
 end

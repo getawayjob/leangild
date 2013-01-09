@@ -21,6 +21,7 @@ gem 'client_side_validations-simple_form'
 gem 'acts_as_paranoid', '~> 0.4.1'	#soft delete
 gem 'gravtastic'	#user_image
 gem 'friendly_id'
+gem 'activerecord-reputation-system', require: 'reputation_system'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,10 +1,13 @@
 <li id="<%= update_item.id %>">
+ <span class="muted"><%= pluralize(update_item.reputation_for(:update_votes).to_i, "Vote") %></span>
   <span class="content"><%= update_item.content %></span>
   <div class="timestamp muted">
    <%= (update_item.created_at.strftime('%D, %I:%M %p')) %>
   </span>
   <% if signed_in? %>
-  <% if current_user == @startup.user || current_user.admin? %>
+  | <%= link_to "Approve", vote_update_path(update_item, type: "approve"), method: "post" %>
+  or <%= link_to "Disapprove", vote_update_path(update_item, type: "disapprove"), method: "post" %>
+   <% if current_user == @startup.user || current_user.admin? %>
   | <%= link_to "Delete", update_item, method: :delete,
 									   data: { confirm: "Are You Sure" },
 									   title: update_item.content

@@ -1,8 +1,7 @@
-<%- model_class = Startup -%>
 <% if @startups.any? %>
   <ol class="listed_items">
     <%= render partial: 'pages/startup_item', collection: @startups %>
   </ol>
-  <% else %>
-  <h3>No updates yet.</h3>
+<% else %>
+  <h3>No startups created yet.</h3>
 <% end %>

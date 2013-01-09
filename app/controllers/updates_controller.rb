@@ -26,4 +26,11 @@ class UpdatesController < ApplicationController
       format.html { redirect_to :back, notice: 'Progress deleted successfully.' }
     end
   end
+
+  def vote
+  	value = params[:type] == "approve" ? 1 : -1
+  	@update = Update.find(params[:id])
+  	@update.add_or_update_evaluation(:update_votes, value, current_user)
+  	redirect_to :back, notice: "Thank you for your feedback."
+  end
 end
