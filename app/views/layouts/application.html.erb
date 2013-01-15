@@ -52,7 +52,7 @@
 
        <hr>
       <footer>
-     <strong class="muted"><p>&copy; 2012 leangild by <%= link_to "HashGild.", hashgild_path %></p><strong>
+     <strong class="muted"><p>&copy; 2012 leangild by <%= link_to "HashGild.", "http://hashgild.herokuapp.com" %></p><strong>
      <% if current_page?(root_path) && !signed_in? %>
 	 	<%= render "application/social_share" %>
 	 <% end %>
