@@ -1,5 +1,5 @@
+<% provide(:title, '') %>
 <% if user_signed_in? %>
-<% provide(:title, 'Create or Discover Products') %>
 	<div class="span3">
 	</br>
 		<%= render 'application/sidebar' %>
@@ -9,43 +9,12 @@
 		<%= render 'startups/index' %>
 	</div>
 <% else %>
-<% provide(:title, 'Customer Discovery and Development, Simplified!') %>
-<div>
-  <h1>Welcome to Leangild, entrepreneurs.</h1>
-</br>
+<div class="hero-unit">
+<center style="font-size: 4em; margin-bottom: 1em;">leangild</center>
+<center>
+<p style="font-size: 2em; margin-bottom: .6em;">Receive feedback from lean entrepreneurs.</p>
+<p style="font-size: 2em; margin-bottom: .6em;">Validate your product and market hypothesis.</p>
+<p style="font-size: 2em; margin-bottom: .6em;">Bring products to market faster and successfully.</p>
+</center>
 </div>
-<div>
-<i><h2>Customer Discovery and Development, Simplified!</h2></i>
-</div>
-<div>
-	<i style="font-size: 18px;">Leangild is an inhouse product by <%= link_to "HashGild", "http://hashgild.herokuapp.com" %>, a startup consultancy & Ruby/Rails design and development shop, to help its' clients measure interest in their ideas. Create pages for your startups and find out if there is demand for your products. Reach, Engage and Understand the causes of the problems your potential customers/users face and innovate to solve them.</i>
-													<br />
- </div>
- <div>
- <div>
-  	<h1>Potential Customers & Early Adopters.</h1>
-  </br>
-</div>
-<div>
-<i><h2>Product Discovery, Simplified!</h2></i>
-</div>
-<div>
-	<i style="font-size: 18px;">Request invite for interesting products and gain early access to evaluate them. Receive periodic updates on products & provide feedback to help startups improve. Help entrepreneurs deliver the right product to you. Be first to know.</i>
-					  </br></br></br>
- </div>
-  <div>
-  <div class="span6">
-      <p>
-      	<%= link_to "Sign Up", signup_path, :class => 'btn btn-large btn-block' %></br>
-      	<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => 'btn btn-large btn-info btn-block' %>
-
-      </p>
-  </div>
-  <div class="span6">
-  		<p>
-  		<%= link_to "Sign In", signin_path, :class => 'btn btn-large btn-block btn-success' %>
-  	</p>
-    </div>
-  </div> 
-  </div> 
 <% end %>

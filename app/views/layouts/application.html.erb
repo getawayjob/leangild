@@ -13,7 +13,7 @@
 	<meta property="og:image" content="" />
 	<meta property="og:site_name" content="Leangild" />
 	<meta property="fb:admins" content="602122563" />
-
+  <%= render 'application/nav_bar' %>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
@@ -39,10 +39,11 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%#= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+  
   </head>
+
   <body>
-  <div class="container">
-	<%= render 'application/nav_bar' %>
+  <div class="container-fluid">
 	<%= render "application/flashes" %>
         <div class="row-fluid">
           <div class="span12">
@@ -52,7 +53,7 @@
 
        <hr>
       <footer>
-     <strong class="muted"><p>&copy; 2012 leangild by <%= link_to "HashGild.", "http://hashgild.herokuapp.com" %></p><strong>
+     <strong><p>&copy; 2012 leangild</p><strong>
      <% if current_page?(root_path) && !signed_in? %>
 	 	<%= render "application/social_share" %>
 	 <% end %>

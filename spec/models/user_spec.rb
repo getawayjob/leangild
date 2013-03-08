@@ -30,7 +30,9 @@ require 'spec_helper'
 
 describe User do
   before do
-    @user = User.create!(username: "username", email: "username@example.com", password: "password")
+    @user = User.create!(username: "username", 
+                         email: "username@example.com", 
+                         password: "password")
   end
   
   subject { @user }
