@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-
-	<meta property="og:title" content="Customer Discovery and Development, Simplified!" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://leangild.herokuapp.com" />
-	<meta property="og:image" content="" />
-	<meta property="og:site_name" content="Leangild" />
-	<meta property="fb:admins" content="602122563" />
   <%= render 'application/nav_bar' %>
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -55,7 +48,7 @@
       <footer>
      <strong><p>&copy; 2012 leangild</p><strong>
      <% if current_page?(root_path) && !signed_in? %>
-	 	<%= render "application/social_share" %>
+	 	<%#= render "application/social_share" %>
 	 <% end %>
      </footer>
     </div> <!-- /container -->
